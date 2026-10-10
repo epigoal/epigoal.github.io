@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EpiGoal Consulting Technology Limited | Management Consulting & IT Solutions</title>
+<meta name="description" content="EpiGoal Consulting Technology Limited — 管理顧問及資訊科技服務 | Management consulting and technology solutions based in Hong Kong.">
+<style>
+  :root{
+    --bg:#0a0e1a;
+    --bg2:#0f1526;
+    --card:rgba(255,255,255,.04);
+    --border:rgba(255,255,255,.09);
+    --text:#e8ecf4;
+    --muted:#9aa4b8;
+    --g1:#6d5cff;
+    --g2:#00d4ff;
+    --g3:#ff5ca8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Segoe UI","PingFang TC","Microsoft JhengHei","Helvetica Neue",Arial,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;
+  }
+  /* ===== 背景光暈 ===== */
+  .glow{position:fixed;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none;z-index:0}
+  .glow.a{width:520px;height:520px;background:var(--g1);top:-160px;left:-120px}
+  .glow.b{width:460px;height:460px;background:var(--g2);top:30%;right:-160px}
+  .glow.c{width:400px;height:400px;background:var(--g3);bottom:-140px;left:30%}
+
+  header,main,footer{position:relative;z-index:1}
+
+  /* ===== 導航 ===== */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:18px 6vw;
+    background:rgba(10,14,26,.72);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+  }
+  .logo{font-size:1.25rem;font-weight:800;letter-spacing:.5px;
+    background:linear-gradient(90deg,var(--g1),var(--g2));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav-links{display:flex;gap:28px;align-items:center;list-style:none}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.95rem;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .lang-btn{
+    cursor:pointer;border:1px solid var(--border);background:var(--card);
+    color:var(--text);padding:7px 16px;border-radius:999px;font-size:.85rem;
+    transition:border-color .2s,background .2s;
+  }
+  .lang-btn:hover{border-color:var(--g2)}
+  @media(max-width:720px){.nav-links a:not(.always){display:none}}
+
+  /* ===== Hero ===== */
+  .hero{
+    min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;padding:120px 6vw 80px;
+  }
+  .badge{
+    display:inline-block;padding:6px 18px;border-radius:999px;font-size:.82rem;
+    border:1px solid var(--border);background:var(--card);color:var(--muted);margin-bottom:28px;
+  }
+  .hero h1{
+    font-size:clamp(2.2rem,5.5vw,4rem);font-weight:800;line-height:1.2;max-width:900px;
+  }
+  .hero h1 .grad{
+    background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p{max-width:640px;margin:24px auto 40px;color:var(--muted);font-size:1.1rem}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+  .btn{
+    padding:14px 34px;border-radius:999px;font-size:1rem;text-decoration:none;font-weight:600;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .btn-primary{
+    color:#fff;background:linear-gradient(90deg,var(--g1),var(--g2));
+    box-shadow:0 8px 30px rgba(109,92,255,.35);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,212,255,.4)}
+  .btn-ghost{color:var(--text);border:1px solid var(--border);background:var(--card)}
+  .btn-ghost:hover{border-color:var(--g2)}
+
+  /* ===== 通用版塊 ===== */
+  section{padding:100px 6vw;max-width:1200px;margin:0 auto}
+  .sec-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;margin-bottom:14px}
+  .sec-sub{color:var(--muted);max-width:640px;margin-bottom:52px}
+
+  /* ===== 服務卡片 ===== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:20px;padding:34px 28px;
+    transition:transform .25s,border-color .25s,background .25s;
+  }
+  .card:hover{transform:translateY(-6px);border-color:rgba(0,212,255,.45);background:rgba(255,255,255,.06)}
+  .icon{
+    width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    font-size:1.5rem;margin-bottom:20px;
+    background:linear-gradient(135deg,rgba(109,92,255,.25),rgba(0,212,255,.25));
+    border:1px solid var(--border);
+  }
+  .card h3{font-size:1.15rem;margin-bottom:10px}
+  .card p{color:var(--muted);font-size:.94rem}
+
+  /* ===== 關於 ===== */
+  .about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  @media(max-width:860px){.about-wrap{grid-template-columns:1fr}}
+  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .stat{
+    background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;text-align:center;
+  }
+  .stat b{
+    display:block;font-size:2rem;
+    background:linear-gradient(90deg,var(--g2),var(--g1));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .stat span{color:var(--muted);font-size:.88rem}
+
+  /* ===== 聯絡 ===== */
+  .contact-box{
+    background:linear-gradient(135deg,rgba(109,92,255,.12),rgba(0,212,255,.10));
+    border:1px solid var(--border);border-radius:26px;padding:60px 8%;text-align:center;
+  }
+  .contact-box p{color:var(--muted);margin:14px auto 34px;max-width:520px}
+  .contact-info{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:36px;color:var(--muted);font-size:.92rem}
+  .contact-info b{color:var(--text);display:block;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+
+  footer{
+    border-top:1px solid var(--border);padding:34px 6vw;text-align:center;
+    color:var(--muted);font-size:.85rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="glow a"></div><div class="glow b"></div><div class="glow c"></div>
+
+<nav>
+  <div class="logo" id="brand">EpiGoal</div>
+  <ul class="nav-links">
+    <li><a href="#services" data-i18n="nav.services">服務</a></li>
+    <li><a href="#about" data-i18n="nav.about">關於我們</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">聯絡我們</a></li>
+    <li><button class="lang-btn" id="langToggle">EN</button></li>
+  </ul>
+</nav>
+
+<main>
+  <!-- Hero -->
+  <div class="hero">
+    <span class="badge" data-i18n="hero.badge">香港註冊 · 軟件開發與資訊科技服務</span>
+    <h1 data-i18n-html="hero.title">以<span class="grad">創新技術</span><br>驅動業務增長</h1>
+    <p data-i18n="hero.sub">我們為企業提供度身訂造的軟件開發、雲端解決方案與數碼轉型顧問服務，助你在數碼時代保持領先。</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">免費諮詢</a>
+      <a class="btn btn-ghost" href="#services" data-i18n="hero.cta2">了解服務</a>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section id="services">
+    <h2 class="sec-title" data-i18n="services.title">我們的服務</h2>
+    <p class="sec-sub" data-i18n="services.sub">由構思到上線，提供一站式技術方案。</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3 data-i18n="services.1.t">定制軟件開發</h3>
+        <p data-i18n="services.1.p">Web 應用、企業系統、API 集成，按業務需求度身訂造，交付可擴展、易維護的方案。</p>
+      </div>
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3 data-i18n="services.2.t">流動應用開發</h3>
+        <p data-i18n="services.2.p">iOS / Android 及跨平台 App 開發，從 UI/UX 設計到上架的完整流程支援。</p>
+      </div>
+      <div class="card">
+        <div class="icon">☁️</div>
+        <h3 data-i18n="services.3.t">雲端與 DevOps</h3>
+        <p data-i18n="services.3.p">雲端架構設計、系統遷移、CI/CD 自動化部署，提升穩定性並降低營運成本。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3 data-i18n="services.4.t">AI 與數據方案</h3>
+        <p data-i18n="services.4.p">AI 應用集成、數據分析平台與商業智能報表，讓數據成為決策的核心動力。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3 data-i18n="services.5.t">系統維護與支援</h3>
+        <p data-i18n="services.5.p">長期技術支援、效能監控與安全加固，確保系統 7×24 穩定運作。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧭</div>
+        <h3 data-i18n="services.6.t">數碼轉型顧問</h3>
+        <p data-i18n="services.6.p">技術選型、流程數碼化評估與落地路線圖，協助傳統業務順利轉型。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="about-wrap">
+      <div>
+        <h2 class="sec-title" data-i18n="about.title">關於我們</h2>
+        <p class="sec-sub" data-i18n="about.p1">EpiGoal Consulting Technology Limited 是一間立足香港的顧問及科技公司，結合管理顧問思維與技術實力，專注為中小企及初創提供高質素、可負擔的資訊科技與數碼轉型服務。</p>
+        <p class="sec-sub" data-i18n="about.p2">我們相信技術應該為業務服務。團隊以務實、透明、準時交付為原則，與客戶建立長期信任的合作關係。</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>50+</b><span data-i18n="about.s1">交付項目</span></div>
+        <div class="stat"><b>98%</b><span data-i18n="about.s2">客戶滿意度</span></div>
+        <div class="stat"><b>10+</b><span data-i18n="about.s3">服務行業</span></div>
+        <div class="stat"><b>24h</b><span data-i18n="about.s4">支援回應</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-box">
+      <h2 class="sec-title" data-i18n="contact.title">開始你的項目</h2>
+      <p data-i18n="contact.sub">告訴我們你的想法，我們會在 1 個工作天內回覆，並提供免費的初步方案評估。</p>
+      <a class="btn btn-primary" href="mailto:info@epigoal.com" data-i18n="contact.cta">發送電郵</a>
+      <div class="contact-info">
+        <div><b data-i18n="contact.email">電郵</b>info@epigoal.com</div>
+        <div><b data-i18n="contact.addr">地址</b><span data-i18n="contact.addr.v">中國香港 · 香港島</span></div>
+        <div><b data-i18n="contact.hours">辦公時間</b><span data-i18n="contact.hours.v">星期一至五 9:00–18:00</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span data-i18n="footer">© 2026 EpiGoal Consulting Technology Limited · 版權所有</span>
+</footer>
+
+<script>
+const i18n = {
+  zh: {
+    "nav.services":"服務","nav.about":"關於我們","nav.contact":"聯絡我們",
+    "hero.badge":"香港註冊 · 管理顧問及資訊科技服務",
+    "hero.title":'以<span class="grad">創新技術</span><br>驅動業務增長',
+    "hero.sub":"我們為企業提供度身訂造的軟件開發、雲端解決方案與數碼轉型顧問服務，助你在數碼時代保持領先。",
+    "hero.cta1":"免費諮詢","hero.cta2":"了解服務",
+    "services.title":"我們的服務","services.sub":"由構思到上線，提供一站式技術方案。",
+    "services.1.t":"定制軟件開發","services.1.p":"Web 應用、企業系統、API 集成，按業務需求度身訂造，交付可擴展、易維護的方案。",
+    "services.2.t":"流動應用開發","services.2.p":"iOS / Android 及跨平台 App 開發，從 UI/UX 設計到上架的完整流程支援。",
+    "services.3.t":"雲端與 DevOps","services.3.p":"雲端架構設計、系統遷移、CI/CD 自動化部署，提升穩定性並降低營運成本。",
+    "services.4.t":"AI 與數據方案","services.4.p":"AI 應用集成、數據分析平台與商業智能報表，讓數據成為決策的核心動力。",
+    "services.5.t":"系統維護與支援","services.5.p":"長期技術支援、效能監控與安全加固，確保系統 7×24 穩定運作。",
+    "services.6.t":"數碼轉型顧問","services.6.p":"技術選型、流程數碼化評估與落地路線圖，協助傳統業務順利轉型。",
+    "about.title":"關於我們",
+    "about.p1":"EpiGoal Consulting Technology Limited 是一間立足香港的顧問及科技公司，結合管理顧問思維與技術實力，專注為中小企及初創提供高質素、可負擔的資訊科技與數碼轉型服務。",
+    "about.p2":"我們相信技術應該為業務服務。團隊以務實、透明、準時交付為原則，與客戶建立長期信任的合作關係。",
+    "about.s1":"交付項目","about.s2":"客戶滿意度","about.s3":"服務行業","about.s4":"支援回應",
+    "contact.title":"開始你的項目",
+    "contact.sub":"告訴我們你的想法，我們會在 1 個工作天內回覆，並提供免費的初步方案評估。",
+    "contact.cta":"發送電郵",
+    "contact.email":"電郵","contact.addr":"地址","contact.addr.v":"中國香港 · 香港島",
+    "contact.hours":"辦公時間","contact.hours.v":"星期一至五 9:00–18:00",
+    "footer":"© 2026 EpiGoal Consulting Technology Limited · 版權所有"
+  },
+  en: {
+    "nav.services":"Services","nav.about":"About","nav.contact":"Contact",
+    "hero.badge":"Hong Kong Registered · Management Consulting & Technology Services",
+    "hero.title":'Driving Growth with<br><span class="grad">Innovative Technology</span>',
+    "hero.sub":"We deliver tailor-made software development, cloud solutions and digital transformation consulting to keep your business ahead in the digital era.",
+    "hero.cta1":"Free Consultation","hero.cta2":"Our Services",
+    "services.title":"Our Services","services.sub":"End-to-end technology solutions, from idea to launch.",
+    "services.1.t":"Custom Software Development","services.1.p":"Web applications, enterprise systems and API integrations — scalable, maintainable solutions built around your business needs.",
+    "services.2.t":"Mobile App Development","services.2.p":"iOS, Android and cross-platform apps with full-cycle support from UI/UX design to store launch.",
+    "services.3.t":"Cloud & DevOps","services.3.p":"Cloud architecture design, system migration and CI/CD automation to boost reliability and cut operating costs.",
+    "services.4.t":"AI & Data Solutions","services.4.p":"AI application integration, data analytics platforms and BI dashboards that turn data into decisions.",
+    "services.5.t":"Maintenance & Support","services.5.p":"Long-term technical support, performance monitoring and security hardening to keep your systems running 24/7.",
+    "services.6.t":"Digital Transformation Consulting","services.6.p":"Technology selection, digitalization assessment and implementation roadmaps for traditional businesses.",
+    "about.title":"About Us",
+    "about.p1":"EpiGoal Consulting Technology Limited is a Hong Kong-based consulting and technology company, combining management consulting insight with technical expertise to deliver high-quality, affordable IT and digital transformation services for SMEs and startups.",
+    "about.p2":"We believe technology should serve the business. Our team stands for pragmatism, transparency and on-time delivery, building long-term trusted partnerships.",
+    "about.s1":"Projects Delivered","about.s2":"Client Satisfaction","about.s3":"Industries Served","about.s4":"Support Response",
+    "contact.title":"Start Your Project",
+    "contact.sub":"Tell us your idea — we reply within 1 business day with a free initial assessment.",
+    "contact.cta":"Send Email",
+    "contact.email":"Email","contact.addr":"Address","contact.addr.v":"Hong Kong Island, Hong Kong, China",
+    "contact.hours":"Office Hours","contact.hours.v":"Mon–Fri 9:00–18:00",
+    "footer":"© 2026 EpiGoal Consulting Technology Limited · All Rights Reserved"
+  }
+};
+
+let lang = localStorage.getItem("lang") || "zh";
+const brand = document.getElementById("brand");
+const toggle = document.getElementById("langToggle");
+
+function applyLang(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(i18n[lang][k]) el.textContent = i18n[lang][k];
+  });
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>{
+    const k = el.getAttribute("data-i18n-html");
+    if(i18n[lang][k]) el.innerHTML = i18n[lang][k];
+  });
+  brand.textContent = "EpiGoal";
+  toggle.textContent = lang === "zh" ? "EN" : "中文";
+  document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
+  localStorage.setItem("lang", lang);
+}
+toggle.addEventListener("click", ()=>{ lang = lang === "zh" ? "en" : "zh"; applyLang(); });
+applyLang();
+</script>
+</body>
+</html>
