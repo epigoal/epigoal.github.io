@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EpiGoal Consulting Technology Limited | Management Consulting & IT Solutions</title>
-<meta name="description" content="EpiGoal Consulting Technology Limited — 管理顧問及資訊科技服務 | Management consulting and technology solutions based in Hong Kong.">
+<title>EpiGoal Consulting Technology Limited | ERP 集成 · EDI · 商業智能</title>
+<meta name="description" content="EpiGoal Consulting Technology Limited — 專注 ERP 系統集成、EDI 電子數據交換、數據倉庫與企業入口平台開發 | ERP integration, EDI, business intelligence and enterprise portal development based in Hong Kong.">
 <style>
   :root{
     --bg:#0a0e1a;
@@ -23,15 +23,13 @@
     font-family:"Segoe UI","PingFang TC","Microsoft JhengHei","Helvetica Neue",Arial,sans-serif;
     background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;
   }
-  /* ===== 背景光暈 ===== */
   .glow{position:fixed;border-radius:50%;filter:blur(120px);opacity:.35;pointer-events:none;z-index:0}
   .glow.a{width:520px;height:520px;background:var(--g1);top:-160px;left:-120px}
-  .glow.b{width:460px;height:460px;background:var(--g2);top:30%;right:-160px}
+  .glow.b{width:460px;height:460px;background:var(--g2);top:24%;right:-160px}
   .glow.c{width:400px;height:400px;background:var(--g3);bottom:-140px;left:30%}
 
   header,main,footer{position:relative;z-index:1}
 
-  /* ===== 導航 ===== */
   nav{
     position:fixed;top:0;left:0;right:0;z-index:100;
     display:flex;justify-content:space-between;align-items:center;
@@ -51,9 +49,8 @@
     transition:border-color .2s,background .2s;
   }
   .lang-btn:hover{border-color:var(--g2)}
-  @media(max-width:720px){.nav-links a:not(.always){display:none}}
+  @media(max-width:760px){.nav-links{gap:16px}.nav-links a:not(.always){display:none}}
 
-  /* ===== Hero ===== */
   .hero{
     min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
     text-align:center;padding:120px 6vw 80px;
@@ -62,63 +59,74 @@
     display:inline-block;padding:6px 18px;border-radius:999px;font-size:.82rem;
     border:1px solid var(--border);background:var(--card);color:var(--muted);margin-bottom:28px;
   }
-  .hero h1{
-    font-size:clamp(2.2rem,5.5vw,4rem);font-weight:800;line-height:1.2;max-width:900px;
-  }
+  .hero h1{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:800;line-height:1.2;max-width:960px}
   .hero h1 .grad{
     background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3));
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .hero p{max-width:640px;margin:24px auto 40px;color:var(--muted);font-size:1.1rem}
+  .hero p{max-width:660px;margin:24px auto 40px;color:var(--muted);font-size:1.1rem}
   .cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
   .btn{
     padding:14px 34px;border-radius:999px;font-size:1rem;text-decoration:none;font-weight:600;
     transition:transform .2s,box-shadow .2s;
   }
-  .btn-primary{
-    color:#fff;background:linear-gradient(90deg,var(--g1),var(--g2));
-    box-shadow:0 8px 30px rgba(109,92,255,.35);
-  }
+  .btn-primary{color:#fff;background:linear-gradient(90deg,var(--g1),var(--g2));
+    box-shadow:0 8px 30px rgba(109,92,255,.35)}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,212,255,.4)}
   .btn-ghost{color:var(--text);border:1px solid var(--border);background:var(--card)}
   .btn-ghost:hover{border-color:var(--g2)}
 
-  /* ===== 通用版塊 ===== */
   section{padding:100px 6vw;max-width:1200px;margin:0 auto}
   .sec-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;margin-bottom:14px}
-  .sec-sub{color:var(--muted);max-width:640px;margin-bottom:52px}
+  .sec-sub{color:var(--muted);max-width:660px;margin-bottom:52px}
 
-  /* ===== 服務卡片 ===== */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
   .card{
     background:var(--card);border:1px solid var(--border);border-radius:20px;padding:34px 28px;
     transition:transform .25s,border-color .25s,background .25s;
   }
   .card:hover{transform:translateY(-6px);border-color:rgba(0,212,255,.45);background:rgba(255,255,255,.06)}
-  .icon{
-    width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  .icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
     font-size:1.5rem;margin-bottom:20px;
     background:linear-gradient(135deg,rgba(109,92,255,.25),rgba(0,212,255,.25));
-    border:1px solid var(--border);
-  }
+    border:1px solid var(--border)}
   .card h3{font-size:1.15rem;margin-bottom:10px}
   .card p{color:var(--muted);font-size:.94rem}
 
-  /* ===== 關於 ===== */
+  /* 案例區 */
+  .case-box{
+    border:1px solid var(--border);border-radius:26px;padding:48px 7%;
+    background:linear-gradient(135deg,rgba(109,92,255,.12),rgba(0,212,255,.08));
+  }
+  .case-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .tag{
+    font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
+    background:rgba(0,212,255,.14);border:1px solid rgba(0,212,255,.35);color:#8ee9ff;
+  }
+  .case-box p{color:var(--muted);max-width:760px}
+  .case-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px;margin-top:34px}
+  .metric{
+    background:rgba(10,14,26,.55);border:1px solid var(--border);border-radius:16px;padding:22px;text-align:center;
+  }
+  .metric b{display:block;font-size:1.9rem;
+    background:linear-gradient(90deg,var(--g2),var(--g1));
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .metric span{color:var(--muted);font-size:.86rem}
+  .case-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:32px}
+  .case-list li{color:var(--muted);font-size:.94rem;padding-left:26px;position:relative}
+  .case-list li::before{
+    content:"✓";position:absolute;left:0;top:0;color:var(--g2);font-weight:700;
+  }
+
   .about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
   @media(max-width:860px){.about-wrap{grid-template-columns:1fr}}
   .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-  .stat{
-    background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;text-align:center;
-  }
-  .stat b{
-    display:block;font-size:2rem;
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px;text-align:center}
+  .stat b{display:block;font-size:2rem;
     background:linear-gradient(90deg,var(--g2),var(--g1));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
+    -webkit-background-clip:text;background-clip:text;color:transparent}
   .stat span{color:var(--muted);font-size:.88rem}
 
-  /* ===== 聯絡 ===== */
   .contact-box{
     background:linear-gradient(135deg,rgba(109,92,255,.12),rgba(0,212,255,.10));
     border:1px solid var(--border);border-radius:26px;padding:60px 8%;text-align:center;
@@ -127,10 +135,7 @@
   .contact-info{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:36px;color:var(--muted);font-size:.92rem}
   .contact-info b{color:var(--text);display:block;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
 
-  footer{
-    border-top:1px solid var(--border);padding:34px 6vw;text-align:center;
-    color:var(--muted);font-size:.85rem;
-  }
+  footer{border-top:1px solid var(--border);padding:34px 6vw;text-align:center;color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
@@ -141,6 +146,7 @@
   <div class="logo" id="brand">EpiGoal</div>
   <ul class="nav-links">
     <li><a href="#services" data-i18n="nav.services">服務</a></li>
+    <li><a href="#case" data-i18n="nav.case">案例</a></li>
     <li><a href="#about" data-i18n="nav.about">關於我們</a></li>
     <li><a href="#contact" data-i18n="nav.contact">聯絡我們</a></li>
     <li><button class="lang-btn" id="langToggle">EN</button></li>
@@ -150,50 +156,77 @@
 <main>
   <!-- Hero -->
   <div class="hero">
-    <span class="badge" data-i18n="hero.badge">香港註冊 · 軟件開發與資訊科技服務</span>
-    <h1 data-i18n-html="hero.title">以<span class="grad">創新技術</span><br>驅動業務增長</h1>
-    <p data-i18n="hero.sub">我們為企業提供度身訂造的軟件開發、雲端解決方案與數碼轉型顧問服務，助你在數碼時代保持領先。</p>
+    <span class="badge" data-i18n="hero.badge">已落地項目：ERP Central Platform · Epicor / SAP / HKERP 整合</span>
+    <h1 data-i18n-html="hero.title">把分散的 ERP、EDI 與報表<br>整合成<span class="grad">一個平台</span></h1>
+    <p data-i18n="hero.sub">我們專注企業系統集成——把 ERP、EDI、數據倉庫與日常報表整合到單一入口，讓管理層一眼看清數據，讓團隊少做重複功夫。</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">免費諮詢</a>
-      <a class="btn btn-ghost" href="#services" data-i18n="hero.cta2">了解服務</a>
+      <a class="btn btn-ghost" href="#case" data-i18n="hero.cta2">看實際案例</a>
     </div>
   </div>
 
   <!-- Services -->
   <section id="services">
     <h2 class="sec-title" data-i18n="services.title">我們的服務</h2>
-    <p class="sec-sub" data-i18n="services.sub">由構思到上線，提供一站式技術方案。</p>
+    <p class="sec-sub" data-i18n="services.sub">從系統對接、數據整合到報表自動化，我們交付的是能真正用起來的方案。</p>
     <div class="grid">
       <div class="card">
-        <div class="icon">💻</div>
-        <h3 data-i18n="services.1.t">定制軟件開發</h3>
-        <p data-i18n="services.1.p">Web 應用、企業系統、API 集成，按業務需求度身訂造，交付可擴展、易維護的方案。</p>
+        <div class="icon">🔗</div>
+        <h3 data-i18n="services.1.t">ERP 系統集成</h3>
+        <p data-i18n="services.1.p">Epicor、SAP、HKERP 等多套系統的數據對接與同步，消除跨系統孤島，確保單一數據來源。</p>
       </div>
       <div class="card">
-        <div class="icon">📱</div>
-        <h3 data-i18n="services.2.t">流動應用開發</h3>
-        <p data-i18n="services.2.p">iOS / Android 及跨平台 App 開發，從 UI/UX 設計到上架的完整流程支援。</p>
+        <div class="icon">📡</div>
+        <h3 data-i18n="services.2.t">EDI 電子數據交換</h3>
+        <p data-i18n="services.2.p">對接大型零售商 EDI 標準，自動收發訂單、發貨通知與發票，減少人手輸入與出錯風險。</p>
       </div>
       <div class="card">
-        <div class="icon">☁️</div>
-        <h3 data-i18n="services.3.t">雲端與 DevOps</h3>
-        <p data-i18n="services.3.p">雲端架構設計、系統遷移、CI/CD 自動化部署，提升穩定性並降低營運成本。</p>
+        <div class="icon">🖥️</div>
+        <h3 data-i18n="services.3.t">企業入口平台開發</h3>
+        <p data-i18n="services.3.p">單一登入、統一菜單與個人化儀表板，讓員工在一個平台存取所有系統與報表。</p>
       </div>
       <div class="card">
-        <div class="icon">🤖</div>
-        <h3 data-i18n="services.4.t">AI 與數據方案</h3>
-        <p data-i18n="services.4.p">AI 應用集成、數據分析平台與商業智能報表，讓數據成為決策的核心動力。</p>
+        <div class="icon">📊</div>
+        <h3 data-i18n="services.4.t">數據倉庫與商業智能</h3>
+        <p data-i18n="services.4.p">ETL 數據管道、數據倉庫建設與互動式報表，把分散數據變成可決策的指標。</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3 data-i18n="services.5.t">流程自動化</h3>
+        <p data-i18n="services.5.p">定時批次作業、數據同步與異常預警，取代人手導出對數，把時間還給團隊。</p>
       </div>
       <div class="card">
         <div class="icon">🛡️</div>
-        <h3 data-i18n="services.5.t">系統維護與支援</h3>
-        <p data-i18n="services.5.p">長期技術支援、效能監控與安全加固，確保系統 7×24 穩定運作。</p>
+        <h3 data-i18n="services.6.t">權限治理與安全</h3>
+        <p data-i18n="services.6.p">角色權限控管、操作審計軌跡，以及測試與生產環境隔離，保障企業數據安全。</p>
       </div>
-      <div class="card">
-        <div class="icon">🧭</div>
-        <h3 data-i18n="services.6.t">數碼轉型顧問</h3>
-        <p data-i18n="services.6.p">技術選型、流程數碼化評估與落地路線圖，協助傳統業務順利轉型。</p>
+    </div>
+  </section>
+
+  <!-- Case Study -->
+  <section id="case">
+    <h2 class="sec-title" data-i18n="case.title">代表案例</h2>
+    <p class="sec-sub" data-i18n="case.sub">不是概念演示，是每天在運作的系統。</p>
+    <div class="case-box">
+      <div class="case-head">
+        <h3 style="font-size:1.5rem">ERP Central Platform</h3>
+        <span class="tag" data-i18n="case.tag">製造業 · 跨境多廠</span>
       </div>
+      <p data-i18n="case.p">為跨地區製造集團打造的統一 ERP 入口平台。以往同事要在多套系統之間切換、人手導出 Excel 對數；現在一個平台集中處理 Epicor 生產數據、HKERP 業務數據、EDI 往來、客戶報價單與成本核算，管理層打開儀表板即可掌握營運全貌。</p>
+      <div class="case-metrics">
+        <div class="metric"><b>7</b><span data-i18n="case.m1">整合功能模組</span></div>
+        <div class="metric"><b>3</b><span data-i18n="case.m2">套 ERP 系統對接</span></div>
+        <div class="metric"><b>20+</b><span data-i18n="case.m3">自動化報表頁</span></div>
+        <div class="metric"><b>1</b><span data-i18n="case.m4">個統一登入入口</span></div>
+      </div>
+      <ul class="case-list">
+        <li data-i18n="case.l1">Epicor 模組：物料對照、成本核算、配件訂單、模具與外廠數據追蹤</li>
+        <li data-i18n="case.l2">Data Control Center：跨公司交易、會計分錄與期間結帳監控</li>
+        <li data-i18n="case.l3">客戶報價單（QuoteSheet）與待處理報價集中管理</li>
+        <li data-i18n="case.l4">個人化 Data Terminal：自選常用數據頻道，登入即看</li>
+        <li data-i18n="case.l5">角色權限與系統設定集中控管，測試／生產環境分明</li>
+        <li data-i18n="case.l6">全站搜尋、我的最愛、最近使用，減少查找時間</li>
+      </ul>
     </div>
   </section>
 
@@ -202,14 +235,14 @@
     <div class="about-wrap">
       <div>
         <h2 class="sec-title" data-i18n="about.title">關於我們</h2>
-        <p class="sec-sub" data-i18n="about.p1">EpiGoal Consulting Technology Limited 是一間立足香港的顧問及科技公司，結合管理顧問思維與技術實力，專注為中小企及初創提供高質素、可負擔的資訊科技與數碼轉型服務。</p>
-        <p class="sec-sub" data-i18n="about.p2">我們相信技術應該為業務服務。團隊以務實、透明、準時交付為原則，與客戶建立長期信任的合作關係。</p>
+        <p class="sec-sub" data-i18n="about.p1">EpiGoal Consulting Technology Limited 是一間立足香港的顧問及科技公司。我們不是單純寫程式的供應商——我們先理解你的業務流程，再用技術把它簡化。</p>
+        <p class="sec-sub" data-i18n="about.p2">我們熟悉製造業與跨地區營運的實際痛點：系統太多、數據對不上、報表靠人手。從 ERP 集成、EDI 對接到數據倉庫，我們交付的是每天真的有人在用、而且用得順手的系統。</p>
       </div>
       <div class="stats">
-        <div class="stat"><b>50+</b><span data-i18n="about.s1">交付項目</span></div>
-        <div class="stat"><b>98%</b><span data-i18n="about.s2">客戶滿意度</span></div>
-        <div class="stat"><b>10+</b><span data-i18n="about.s3">服務行業</span></div>
-        <div class="stat"><b>24h</b><span data-i18n="about.s4">支援回應</span></div>
+        <div class="stat"><b>10+</b><span data-i18n="about.s1">年企業系統經驗</span></div>
+        <div class="stat"><b>7</b><span data-i18n="about.s2">個平台功能模組</span></div>
+        <div class="stat"><b>3</b><span data-i18n="about.s3">套 ERP 整合經驗</span></div>
+        <div class="stat"><b>100%</b><span data-i18n="about.s4">專注企業系統集成</span></div>
       </div>
     </div>
   </section>
@@ -217,8 +250,8 @@
   <!-- Contact -->
   <section id="contact">
     <div class="contact-box">
-      <h2 class="sec-title" data-i18n="contact.title">開始你的項目</h2>
-      <p data-i18n="contact.sub">告訴我們你的想法，我們會在 1 個工作天內回覆，並提供免費的初步方案評估。</p>
+      <h2 class="sec-title" data-i18n="contact.title">聊聊你的系統難題</h2>
+      <p data-i18n="contact.sub">ERP 對不上數、報表靠人手做、系統太多太散？告訴我們現況，我們會在 1 個工作天內回覆，並給出初步的改善方向。</p>
       <a class="btn btn-primary" href="mailto:info@epigoal.com" data-i18n="contact.cta">發送電郵</a>
       <div class="contact-info">
         <div><b data-i18n="contact.email">電郵</b>info@epigoal.com</div>
@@ -236,48 +269,66 @@
 <script>
 const i18n = {
   zh: {
-    "nav.services":"服務","nav.about":"關於我們","nav.contact":"聯絡我們",
-    "hero.badge":"香港註冊 · 管理顧問及資訊科技服務",
-    "hero.title":'以<span class="grad">創新技術</span><br>驅動業務增長',
-    "hero.sub":"我們為企業提供度身訂造的軟件開發、雲端解決方案與數碼轉型顧問服務，助你在數碼時代保持領先。",
-    "hero.cta1":"免費諮詢","hero.cta2":"了解服務",
-    "services.title":"我們的服務","services.sub":"由構思到上線，提供一站式技術方案。",
-    "services.1.t":"定制軟件開發","services.1.p":"Web 應用、企業系統、API 集成，按業務需求度身訂造，交付可擴展、易維護的方案。",
-    "services.2.t":"流動應用開發","services.2.p":"iOS / Android 及跨平台 App 開發，從 UI/UX 設計到上架的完整流程支援。",
-    "services.3.t":"雲端與 DevOps","services.3.p":"雲端架構設計、系統遷移、CI/CD 自動化部署，提升穩定性並降低營運成本。",
-    "services.4.t":"AI 與數據方案","services.4.p":"AI 應用集成、數據分析平台與商業智能報表，讓數據成為決策的核心動力。",
-    "services.5.t":"系統維護與支援","services.5.p":"長期技術支援、效能監控與安全加固，確保系統 7×24 穩定運作。",
-    "services.6.t":"數碼轉型顧問","services.6.p":"技術選型、流程數碼化評估與落地路線圖，協助傳統業務順利轉型。",
+    "nav.services":"服務","nav.case":"案例","nav.about":"關於我們","nav.contact":"聯絡我們",
+    "hero.badge":"已落地項目：ERP Central Platform · Epicor / SAP / HKERP 整合",
+    "hero.title":'把分散的 ERP、EDI 與報表<br>整合成<span class="grad">一個平台</span>',
+    "hero.sub":"我們專注企業系統集成——把 ERP、EDI、數據倉庫與日常報表整合到單一入口，讓管理層一眼看清數據，讓團隊少做重複功夫。",
+    "hero.cta1":"免費諮詢","hero.cta2":"看實際案例",
+    "services.title":"我們的服務","services.sub":"從系統對接、數據整合到報表自動化，我們交付的是能真正用起來的方案。",
+    "services.1.t":"ERP 系統集成","services.1.p":"Epicor、SAP、HKERP 等多套系統的數據對接與同步，消除跨系統孤島，確保單一數據來源。",
+    "services.2.t":"EDI 電子數據交換","services.2.p":"對接大型零售商 EDI 標準，自動收發訂單、發貨通知與發票，減少人手輸入與出錯風險。",
+    "services.3.t":"企業入口平台開發","services.3.p":"單一登入、統一菜單與個人化儀表板，讓員工在一個平台存取所有系統與報表。",
+    "services.4.t":"數據倉庫與商業智能","services.4.p":"ETL 數據管道、數據倉庫建設與互動式報表，把分散數據變成可決策的指標。",
+    "services.5.t":"流程自動化","services.5.p":"定時批次作業、數據同步與異常預警，取代人手導出對數，把時間還給團隊。",
+    "services.6.t":"權限治理與安全","services.6.p":"角色權限控管、操作審計軌跡，以及測試與生產環境隔離，保障企業數據安全。",
+    "case.title":"代表案例","case.sub":"不是概念演示，是每天在運作的系統。","case.tag":"製造業 · 跨境多廠",
+    "case.p":"為跨地區製造集團打造的統一 ERP 入口平台。以往同事要在多套系統之間切換、人手導出 Excel 對數；現在一個平台集中處理 Epicor 生產數據、HKERP 業務數據、EDI 往來、客戶報價單與成本核算，管理層打開儀表板即可掌握營運全貌。",
+    "case.m1":"整合功能模組","case.m2":"套 ERP 系統對接","case.m3":"自動化報表頁","case.m4":"個統一登入入口",
+    "case.l1":"Epicor 模組：物料對照、成本核算、配件訂單、模具與外廠數據追蹤",
+    "case.l2":"Data Control Center：跨公司交易、會計分錄與期間結帳監控",
+    "case.l3":"客戶報價單（QuoteSheet）與待處理報價集中管理",
+    "case.l4":"個人化 Data Terminal：自選常用數據頻道，登入即看",
+    "case.l5":"角色權限與系統設定集中控管，測試／生產環境分明",
+    "case.l6":"全站搜尋、我的最愛、最近使用，減少查找時間",
     "about.title":"關於我們",
-    "about.p1":"EpiGoal Consulting Technology Limited 是一間立足香港的顧問及科技公司，結合管理顧問思維與技術實力，專注為中小企及初創提供高質素、可負擔的資訊科技與數碼轉型服務。",
-    "about.p2":"我們相信技術應該為業務服務。團隊以務實、透明、準時交付為原則，與客戶建立長期信任的合作關係。",
-    "about.s1":"交付項目","about.s2":"客戶滿意度","about.s3":"服務行業","about.s4":"支援回應",
-    "contact.title":"開始你的項目",
-    "contact.sub":"告訴我們你的想法，我們會在 1 個工作天內回覆，並提供免費的初步方案評估。",
+    "about.p1":"EpiGoal Consulting Technology Limited 是一間立足香港的顧問及科技公司。我們不是單純寫程式的供應商——我們先理解你的業務流程，再用技術把它簡化。",
+    "about.p2":"我們熟悉製造業與跨地區營運的實際痛點：系統太多、數據對不上、報表靠人手。從 ERP 集成、EDI 對接到數據倉庫，我們交付的是每天真的有人在用、而且用得順手的系統。",
+    "about.s1":"年企業系統經驗","about.s2":"個平台功能模組","about.s3":"套 ERP 整合經驗","about.s4":"專注企業系統集成",
+    "contact.title":"聊聊你的系統難題",
+    "contact.sub":"ERP 對不上數、報表靠人手做、系統太多太散？告訴我們現況，我們會在 1 個工作天內回覆，並給出初步的改善方向。",
     "contact.cta":"發送電郵",
     "contact.email":"電郵","contact.addr":"地址","contact.addr.v":"中國香港 · 香港島",
     "contact.hours":"辦公時間","contact.hours.v":"星期一至五 9:00–18:00",
     "footer":"© 2026 EpiGoal Consulting Technology Limited · 版權所有"
   },
   en: {
-    "nav.services":"Services","nav.about":"About","nav.contact":"Contact",
-    "hero.badge":"Hong Kong Registered · Management Consulting & Technology Services",
-    "hero.title":'Driving Growth with<br><span class="grad">Innovative Technology</span>',
-    "hero.sub":"We deliver tailor-made software development, cloud solutions and digital transformation consulting to keep your business ahead in the digital era.",
-    "hero.cta1":"Free Consultation","hero.cta2":"Our Services",
-    "services.title":"Our Services","services.sub":"End-to-end technology solutions, from idea to launch.",
-    "services.1.t":"Custom Software Development","services.1.p":"Web applications, enterprise systems and API integrations — scalable, maintainable solutions built around your business needs.",
-    "services.2.t":"Mobile App Development","services.2.p":"iOS, Android and cross-platform apps with full-cycle support from UI/UX design to store launch.",
-    "services.3.t":"Cloud & DevOps","services.3.p":"Cloud architecture design, system migration and CI/CD automation to boost reliability and cut operating costs.",
-    "services.4.t":"AI & Data Solutions","services.4.p":"AI application integration, data analytics platforms and BI dashboards that turn data into decisions.",
-    "services.5.t":"Maintenance & Support","services.5.p":"Long-term technical support, performance monitoring and security hardening to keep your systems running 24/7.",
-    "services.6.t":"Digital Transformation Consulting","services.6.p":"Technology selection, digitalization assessment and implementation roadmaps for traditional businesses.",
+    "nav.services":"Services","nav.case":"Case Study","nav.about":"About","nav.contact":"Contact",
+    "hero.badge":"Live in production: ERP Central Platform · Epicor / SAP / HKERP integration",
+    "hero.title":'Unify scattered ERP, EDI<br>and reporting into <span class="grad">one platform</span>',
+    "hero.sub":"We specialise in enterprise system integration — consolidating ERP, EDI, data warehouses and daily reports into a single portal, so management sees the whole picture and teams stop doing the same work twice.",
+    "hero.cta1":"Free Consultation","hero.cta2":"See the Case Study",
+    "services.title":"Our Services","services.sub":"From system integration and data consolidation to report automation — we deliver solutions people actually use.",
+    "services.1.t":"ERP System Integration","services.1.p":"Connect and synchronise Epicor, SAP, HKERP and other systems — eliminating data silos and establishing a single source of truth.",
+    "services.2.t":"EDI Implementation","services.2.p":"Integrate with major retailers' EDI standards — automated exchange of orders, dispatch notices and invoices that removes manual entry and its errors.",
+    "services.3.t":"Enterprise Portal Development","services.3.p":"Single sign-on, unified navigation and personalised dashboards — one platform for every system and report your team needs.",
+    "services.4.t":"Data Warehouse & BI","services.4.p":"ETL pipelines, data warehouse design and interactive reporting that turn scattered data into decision-ready metrics.",
+    "services.5.t":"Process Automation","services.5.p":"Scheduled batch jobs, data synchronisation and exception alerts that replace manual exports and reconciliation.",
+    "services.6.t":"Governance & Security","services.6.p":"Role-based access control, audit trails and clear separation of testing and production environments.",
+    "case.title":"Case Study","case.sub":"Not a concept demo — a system running in production every day.","case.tag":"Manufacturing · Multi-site",
+    "case.p":"A unified ERP portal built for a multi-site manufacturing group. Staff used to juggle several systems and reconcile Excel exports by hand. Today one platform consolidates Epicor production data, HKERP business data, EDI transactions, customer quotations and costing — with management dashboards that show the full picture at a glance.",
+    "case.m1":"Integrated modules","case.m2":"ERP systems connected","case.m3":"Automated report pages","case.m4":"Unified login portal",
+    "case.l1":"Epicor module: item mapping, costing, component orders, tooling and external-factory tracking",
+    "case.l2":"Data Control Center: intercompany transactions, journal entries and period-close monitoring",
+    "case.l3":"Customer QuoteSheet with centralised open-quote tracking",
+    "case.l4":"Personalised Data Terminal — pin the data channels you use, see them on every login",
+    "case.l5":"Centralised role permissions and system configuration, with clear test/production separation",
+    "case.l6":"Global search, favourites and recent items to cut time spent hunting for functions",
     "about.title":"About Us",
-    "about.p1":"EpiGoal Consulting Technology Limited is a Hong Kong-based consulting and technology company, combining management consulting insight with technical expertise to deliver high-quality, affordable IT and digital transformation services for SMEs and startups.",
-    "about.p2":"We believe technology should serve the business. Our team stands for pragmatism, transparency and on-time delivery, building long-term trusted partnerships.",
-    "about.s1":"Projects Delivered","about.s2":"Client Satisfaction","about.s3":"Industries Served","about.s4":"Support Response",
-    "contact.title":"Start Your Project",
-    "contact.sub":"Tell us your idea — we reply within 1 business day with a free initial assessment.",
+    "about.p1":"EpiGoal Consulting Technology Limited is a Hong Kong-based consulting and technology company. We are not just a coding vendor — we understand your business process first, then simplify it with technology.",
+    "about.p2":"We know the real pain of manufacturing and cross-border operations: too many systems, data that never matches, reports built by hand. From ERP integration and EDI to data warehousing, we deliver systems that people genuinely use — and use comfortably.",
+    "about.s1":"Years in enterprise systems","about.s2":"Platform modules delivered","about.s3":"ERP systems integrated","about.s4":"Focused on integration",
+    "contact.title":"Let's Talk About Your Systems",
+    "contact.sub":"ERP figures that never match? Reports built by hand? Too many scattered systems? Tell us where you are — we reply within 1 business day with an initial direction.",
     "contact.cta":"Send Email",
     "contact.email":"Email","contact.addr":"Address","contact.addr.v":"Hong Kong Island, Hong Kong, China",
     "contact.hours":"Office Hours","contact.hours.v":"Mon–Fri 9:00–18:00",
