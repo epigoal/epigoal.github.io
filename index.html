@@ -118,6 +118,20 @@
     content:"✓";position:absolute;left:0;top:0;color:var(--g2);font-weight:700;
   }
 
+  /* 平台功能導覽 */
+  .ptabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+  .ptab{cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--muted);
+    padding:10px 20px;border-radius:999px;font-size:.92rem;font-family:inherit;transition:all .2s}
+  .ptab:hover{border-color:var(--g2);color:var(--text)}
+  .ptab.active{background:linear-gradient(90deg,var(--g1),var(--g2));color:#fff;border-color:transparent;font-weight:600}
+  .shot{border:1px solid var(--border);border-radius:18px;overflow:hidden;
+    background:rgba(10,14,26,.6);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .shot img{display:block;width:100%;height:auto}
+  .shot-cap{padding:16px 22px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+  .tour-detail{margin-top:30px}
+  .tour-detail h3{font-size:1.35rem;margin-bottom:10px}
+  .tour-detail>p{color:var(--muted);max-width:780px}
+
   .about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
   @media(max-width:860px){.about-wrap{grid-template-columns:1fr}}
   .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -147,6 +161,7 @@
   <ul class="nav-links">
     <li><a href="#services" data-i18n="nav.services">服務</a></li>
     <li><a href="#case" data-i18n="nav.case">案例</a></li>
+    <li><a href="#tour" data-i18n="nav.tour">平台導覽</a></li>
     <li><a href="#about" data-i18n="nav.about">關於我們</a></li>
     <li><a href="#contact" data-i18n="nav.contact">聯絡我們</a></li>
     <li><button class="lang-btn" id="langToggle">EN</button></li>
@@ -230,6 +245,14 @@
     </div>
   </section>
 
+  <!-- Platform Tour -->
+  <section id="tour">
+    <h2 class="sec-title" data-i18n="tour.title">平台功能導覽</h2>
+    <p class="sec-sub" data-i18n="tour.sub">真實介面截圖——點下面的選單，逐個模組睇。</p>
+    <div class="ptabs" id="ptabs"></div>
+    <div id="tourBody"></div>
+  </section>
+
   <!-- About -->
   <section id="about">
     <div class="about-wrap">
@@ -269,7 +292,7 @@
 <script>
 const i18n = {
   zh: {
-    "nav.services":"服務","nav.case":"案例","nav.about":"關於我們","nav.contact":"聯絡我們",
+    "nav.services":"服務","nav.case":"案例","nav.tour":"平台導覽","nav.about":"關於我們","nav.contact":"聯絡我們",
     "hero.badge":"已落地項目：ERP Central Platform · Epicor / SAP / HKERP 整合",
     "hero.title":'把分散的 ERP、EDI 與報表<br>整合成<span class="grad">一個平台</span>',
     "hero.sub":"我們專注企業系統集成——把 ERP、EDI、數據倉庫與日常報表整合到單一入口，讓管理層一眼看清數據，讓團隊少做重複功夫。",
@@ -299,10 +322,13 @@ const i18n = {
     "contact.cta":"發送電郵",
     "contact.email":"電郵","contact.addr":"地址","contact.addr.v":"中國香港 · 香港島",
     "contact.hours":"辦公時間","contact.hours.v":"星期一至五 9:00–18:00",
-    "footer":"© 2026 EpiGoal Consulting Technology Limited · 版權所有"
+    "footer":"© 2026 EpiGoal Consulting Technology Limited · 版權所有",
+    "tour.title":"平台功能導覽",
+    "tour.sub":"真實介面截圖——點下面的選單，逐個模組睇。",
+    "tour.cap":"ERP Central Platform 實際介面 · 示範環境數據"
   },
   en: {
-    "nav.services":"Services","nav.case":"Case Study","nav.about":"About","nav.contact":"Contact",
+    "nav.services":"Services","nav.case":"Case Study","nav.tour":"Platform Tour","nav.about":"About","nav.contact":"Contact",
     "hero.badge":"Live in production: ERP Central Platform · Epicor / SAP / HKERP integration",
     "hero.title":'Unify scattered ERP, EDI<br>and reporting into <span class="grad">one platform</span>',
     "hero.sub":"We specialise in enterprise system integration — consolidating ERP, EDI, data warehouses and daily reports into a single portal, so management sees the whole picture and teams stop doing the same work twice.",
@@ -332,9 +358,124 @@ const i18n = {
     "contact.cta":"Send Email",
     "contact.email":"Email","contact.addr":"Address","contact.addr.v":"Hong Kong Island, Hong Kong, China",
     "contact.hours":"Office Hours","contact.hours.v":"Mon–Fri 9:00–18:00",
-    "footer":"© 2026 EpiGoal Consulting Technology Limited · All Rights Reserved"
+    "footer":"© 2026 EpiGoal Consulting Technology Limited · All Rights Reserved",
+    "tour.title":"Platform Tour",
+    "tour.sub":"Real screenshots — click the menu below to explore each module.",
+    "tour.cap":"Actual ERP Central Platform interface · demo environment data"
   }
 };
+
+// 平台導覽資料（截圖 + 賣點）
+const tourData = {
+  zh: [
+    {
+      tab:"統一儀表板", img:"assets/platform-modules.png", alt:"ERP Central Platform 統一儀表板",
+      t:"統一儀表板——所有系統一頁看清",
+      d:"登入即見整個集團的營運概況：Epicor 生產、Data Control Center 跨公司交易、HKERP 薪酬與主檔、報價工具，全部濃縮成即時 KPI 卡，管理層不用再逐個系統登入查數。",
+      b:["每個模組即時 KPI：待處理 PD、跨公司金額、結帳天數、30 日良率","模組健康狀態一目了然（Active／Secured／Configured）","一頁總覽 3 套 ERP + 業務工具，取代人手逐系統導出 Excel"]
+    },
+    {
+      tab:"Epicor 生產報表", img:"assets/platform-epicor.png", alt:"Epicor 生產監控報告組",
+      t:"Epicor 生產監控報告組——7 個子報告覆蓋全流程",
+      d:"專為廠房營運而設的監控報告組，由物料建立、成本滾算到外廠數據收集，每個報告都有覆蓋率分析與週勢追蹤，紙本 QC 報告更可以用 OCR 自動辨識歸檔。",
+      b:["Item vs PD MOM：物料建立進度 vs PD/MOM 覆蓋率與週勢","Costing：W-Layer、包裝與 HK ERP 成本滾算覆蓋率","Molding：模具申請、維修產能與 Sa/Sb/Sc 分析","Mold QC Report OCR：紙本 QC 報告自動辨識歸檔"]
+    },
+    {
+      tab:"數據控制中心", img:"assets/platform-dcc.png", alt:"Data Control Center 跨 ERP 數據控制中樞",
+      t:"Data Control Center——跨 ERP 數據控制中樞",
+      d:"集中審查 Epicor 用戶權限、監控 HKERP 主檔（系統參數、外部物料、客戶）的同步狀態。主檔不一致不再靠人手發現，權限審查不用逐個系統登入。",
+      b:["User Access Overall Control：Epicor 用戶權限集中審查","主檔同步監控：System / External Item / Customer Master","一鍵匯出 Excel，供審計與對帳使用"]
+    },
+    {
+      tab:"數據倉庫與 BI", img:"assets/platform-warehouse.png", alt:"Data Warehouse 數據倉庫與 BI 報表",
+      t:"數據倉庫與 BI 報表——由連線到圖表一條龍",
+      d:"連接 SQL Server、Oracle、PostgreSQL 及 Excel 工作簿，抽取成倉庫數據集，再用圖表面板砌出 BI 報告——KPI、柱狀、折線、圓餅全部自選，全螢幕演示或嵌入儀表板都得。",
+      b:["多種數據源統一接入，匯入狀態有 Action Log 追蹤","自建 BI 報表：表格、KPI、柱狀、折線、圓餅圖","AI Modeling 與 CSV 匯出","全螢幕／儀表板兩種展示模式"]
+    },
+    {
+      tab:"報價單產生器", img:"assets/platform-quotesheet.png", alt:"Customer QuoteSheet Generator 客戶報價單產生器",
+      t:"客戶報價單產生器——Excel 模板自動生成",
+      d:"上傳 Excel 模板與主檔數據，平台按映射規則直接在瀏覽器生成報價單 Excel，完整保留 VBA 巨集與格式——同事不用再逐份複製貼上改數。",
+      b:["Template Upload + Mapping Setup + Action Log 全流程管理","客戶端直接生成，保留 VBA 巨集與原有格式","主檔維護與生成記錄一目了然"]
+    },
+    {
+      tab:"Data Terminal", img:"assets/platform-terminal.png", alt:"個人化 Data Terminal 工作台",
+      t:"個人化 Data Terminal——每人一個專屬工作台",
+      d:"每位同事自選每天要看的數據頻道——報表區、EDI、同步記錄——登入即見個人專屬終端機。配合我的最愛、最近使用與全站搜尋，常用的功能一秒到達。",
+      b:["自選數據頻道，只顯示權限允許的內容","同步歷史與數據摘要即時串流","我的最愛、最近使用、全站搜尋"]
+    },
+    {
+      tab:"登入與權限", img:"assets/platform-login.png", alt:"統一登入入口",
+      t:"統一登入與權限治理——一個帳號進入所有系統",
+      d:"一個帳號進入全部系統。角色權限決定每個人看得到什麼模組，測試與生產環境在介面上清晰標示，敏感操作留有活動日誌可審計。",
+      b:["單一登入（SSO）存取全部系統與工具","角色為本權限，未授權模組直接隱藏","測試／生產環境標示 + 活動日誌審計"]
+    }
+  ],
+  en: [
+    {
+      tab:"Unified Dashboard", img:"assets/platform-modules.png", alt:"ERP Central Platform unified dashboard",
+      t:"Unified Dashboard — every system on one page",
+      d:"See the whole operation the moment you sign in: Epicor production, Data Control Center intercompany activity, HKERP payroll and masters, and quoting tools — condensed into live KPI cards. No more logging into each system to check numbers.",
+      b:["Live KPI cards per module: open PDs, intercompany value, days to close, 30-day yield","Module health at a glance (Active / Secured / Configured)","One page covering 3 ERP systems plus business tools — replacing manual Excel exports"]
+    },
+    {
+      tab:"Epicor Reports", img:"assets/platform-epicor.png", alt:"Epicor production monitoring reports",
+      t:"Epicor Production Monitoring — 7 sub-reports covering the full flow",
+      d:"A monitoring suite built for factory operations: from item creation and cost roll-up to external factory data collection. Every report includes coverage analysis and weekly trends, and paper QC reports can be digitised with OCR.",
+      b:["Item vs PD MOM: item creation progress vs PD/MOM coverage with weekly trend","Costing: W-Layer, packing and HK ERP cost roll-up coverage","Molding: mold requests, repair throughput and Sa/Sb/Sc analysis","Mold QC Report OCR: automatic recognition and filing of paper QC reports"]
+    },
+    {
+      tab:"Data Control Center", img:"assets/platform-dcc.png", alt:"Data Control Center cross-ERP hub",
+      t:"Data Control Center — the cross-ERP control hub",
+      d:"Review Epicor user access and monitor HKERP master data synchronisation (system parameters, external items, customers) from one place. Inconsistent master data no longer relies on someone noticing by hand.",
+      b:["User Access Overall Control: centralised Epicor access review","Master data sync monitoring: System / External Item / Customer Master","One-click Excel export for audit and reconciliation"]
+    },
+    {
+      tab:"Warehouse & BI", img:"assets/platform-warehouse.png", alt:"Data Warehouse and BI reports",
+      t:"Data Warehouse & BI — from connection to chart, end to end",
+      d:"Connect SQL Server, Oracle, PostgreSQL and Excel workbooks, extract them into warehouse datasets, then compose BI reports from chart panels — table, KPI, column, bar, line and pie, all configurable, with full-screen presentation or dashboard embedding.",
+      b:["Unified connectors for multiple data sources with Action Log tracking","Self-service BI reports: table, KPI, column, bar, line, pie","AI modeling and CSV export","Full-screen and dashboard display modes"]
+    },
+    {
+      tab:"Quote Generator", img:"assets/platform-quotesheet.png", alt:"Customer QuoteSheet Generator",
+      t:"Customer QuoteSheet Generator — automated from Excel templates",
+      d:"Upload an Excel template and master data; the platform generates quote-sheet Excel files in the browser according to mapping rules — preserving VBA macros and formatting. No more copy-paste-editing one quote at a time.",
+      b:["Full workflow: Template Upload + Mapping Setup + Action Log","Client-side generation that preserves VBA macros and original formatting","Master data maintenance and generation history in one place"]
+    },
+    {
+      tab:"Data Terminal", img:"assets/platform-terminal.png", alt:"Personalised Data Terminal workspace",
+      t:"Personalised Data Terminal — a workspace for every user",
+      d:"Each team member picks the data feeds they work with every day — report sections, EDI, sync history — and their own terminal streams them on every sign-in. With favourites, recents and global search, everything is one click away.",
+      b:["Choose your own data channels — only what your access rights allow","Live streaming of sync history and data summaries","Favourites, recent items and global search"]
+    },
+    {
+      tab:"Login & Access", img:"assets/platform-login.png", alt:"Unified login portal",
+      t:"Unified Login & Governance — one account for every system",
+      d:"One account for the entire platform. Role-based permissions decide which modules each person sees, test and production environments are clearly labelled, and sensitive actions are recorded in an audit log.",
+      b:["Single sign-on (SSO) across all systems and tools","Role-based access — unauthorised modules are simply hidden","Test / production environment labels plus audit logging"]
+    }
+  ]
+};
+
+let tourIdx = 0;
+function renderTour(){
+  const data = tourData[lang];
+  const caps = i18n[lang]["tour.cap"];
+  document.getElementById("ptabs").innerHTML = data.map((x,i) =>
+    `<button class="ptab${i===tourIdx?" active":""}" onclick="showTour(${i})">${x.tab}</button>`).join("");
+  const x = data[tourIdx];
+  document.getElementById("tourBody").innerHTML = `
+    <div class="shot">
+      <img src="${x.img}" alt="${x.alt}" loading="lazy">
+      <div class="shot-cap">${caps}</div>
+    </div>
+    <div class="tour-detail">
+      <h3>${x.t}</h3>
+      <p>${x.d}</p>
+      <ul class="case-list">${x.b.map(y=>`<li>${y}</li>`).join("")}</ul>
+    </div>`;
+}
+function showTour(i){ tourIdx = i; renderTour(); }
 
 let lang = localStorage.getItem("lang") || "zh";
 const brand = document.getElementById("brand");
@@ -353,6 +494,7 @@ function applyLang(){
   toggle.textContent = lang === "zh" ? "EN" : "中文";
   document.documentElement.lang = lang === "zh" ? "zh-Hant" : "en";
   localStorage.setItem("lang", lang);
+  renderTour();
 }
 toggle.addEventListener("click", ()=>{ lang = lang === "zh" ? "en" : "zh"; applyLang(); });
 applyLang();
