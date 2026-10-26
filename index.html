@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EpiGoal Consulting Technology Limited | ERP 集成 · EDI · 商業智能</title>
-<meta name="description" content="EpiGoal Consulting Technology Limited — 專注 ERP 系統集成、EDI 電子數據交換、數據倉庫與企業入口平台開發 | ERP integration, EDI, business intelligence and enterprise portal development based in Hong Kong.">
+<title>EpiGoal | ERP 中央平台 ECP — 一套平台，整合所有 ERP 系統</title>
+<meta name="description" content="ERP Central Platform（ECP）— 單一登入、統一資料倉儲、自助 BI 報表、受控分享、OCR 與 RPA 自動化，跨 Epicor / HKERP / Navision / CorpERP / SAP。由 EpiGoal Consulting Technology Limited 開發。">
 <style>
   :root{
     --bg:#0a0e1a;
@@ -40,8 +40,8 @@
   .logo{font-size:1.25rem;font-weight:800;letter-spacing:.5px;
     background:linear-gradient(90deg,var(--g1),var(--g2));
     -webkit-background-clip:text;background-clip:text;color:transparent}
-  .nav-links{display:flex;gap:28px;align-items:center;list-style:none}
-  .nav-links a{color:var(--muted);text-decoration:none;font-size:.95rem;transition:color .2s}
+  .nav-links{display:flex;gap:26px;align-items:center;list-style:none}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.93rem;transition:color .2s;white-space:nowrap}
   .nav-links a:hover{color:var(--text)}
   .lang-btn{
     cursor:pointer;border:1px solid var(--border);background:var(--card);
@@ -49,7 +49,7 @@
     transition:border-color .2s,background .2s;
   }
   .lang-btn:hover{border-color:var(--g2)}
-  @media(max-width:760px){.nav-links{gap:16px}.nav-links a:not(.always){display:none}}
+  @media(max-width:900px){.nav-links{gap:14px}.nav-links a:not(.always){display:none}}
 
   .hero{
     min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
@@ -59,12 +59,12 @@
     display:inline-block;padding:6px 18px;border-radius:999px;font-size:.82rem;
     border:1px solid var(--border);background:var(--card);color:var(--muted);margin-bottom:28px;
   }
-  .hero h1{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:800;line-height:1.2;max-width:960px}
+  .hero h1{font-size:clamp(2.1rem,5.5vw,4rem);font-weight:800;line-height:1.2;max-width:960px}
   .hero h1 .grad{
     background:linear-gradient(90deg,var(--g1),var(--g2),var(--g3));
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .hero p{max-width:660px;margin:24px auto 40px;color:var(--muted);font-size:1.1rem}
+  .hero p{max-width:700px;margin:24px auto 40px;color:var(--muted);font-size:1.1rem}
   .cta-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
   .btn{
     padding:14px 34px;border-radius:999px;font-size:1rem;text-decoration:none;font-weight:600;
@@ -78,9 +78,9 @@
 
   section{padding:100px 6vw;max-width:1200px;margin:0 auto}
   .sec-title{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:800;margin-bottom:14px}
-  .sec-sub{color:var(--muted);max-width:660px;margin-bottom:52px}
+  .sec-sub{color:var(--muted);max-width:720px;margin-bottom:52px}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
   .card{
     background:var(--card);border:1px solid var(--border);border-radius:20px;padding:34px 28px;
     transition:transform .25s,border-color .25s,background .25s;
@@ -90,48 +90,104 @@
     font-size:1.5rem;margin-bottom:20px;
     background:linear-gradient(135deg,rgba(109,92,255,.25),rgba(0,212,255,.25));
     border:1px solid var(--border)}
-  .card h3{font-size:1.15rem;margin-bottom:10px}
+  .card h3{font-size:1.12rem;margin-bottom:10px}
   .card p{color:var(--muted);font-size:.94rem}
 
-  /* 案例區 */
-  .case-box{
-    border:1px solid var(--border);border-radius:26px;padding:48px 7%;
-    background:linear-gradient(135deg,rgba(109,92,255,.12),rgba(0,212,255,.08));
+  /* 挑戰 */
+  .challenge-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  @media(max-width:900px){.challenge-wrap{grid-template-columns:1fr}}
+  .pain{list-style:none;display:flex;flex-direction:column;gap:18px}
+  .pain li{display:flex;gap:18px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 24px}
+  .pain b{
+    flex:none;width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    font-size:1rem;background:linear-gradient(135deg,rgba(255,92,168,.25),rgba(109,92,255,.25));
+    border:1px solid rgba(255,92,168,.4);color:#ffa9cd}
+  .pain span{color:var(--muted);font-size:.96rem}
+  .eco-box{
+    border:1px solid var(--border);border-radius:22px;padding:42px 36px;
+    background:linear-gradient(135deg,rgba(109,92,255,.16),rgba(0,212,255,.10));
   }
-  .case-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .eco-box h3{font-size:1.35rem;margin-bottom:14px}
+  .eco-box p{color:var(--muted)}
+  .eco-box .tag{margin-bottom:18px;display:inline-block}
+
   .tag{
     font-size:.72rem;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:999px;
     background:rgba(0,212,255,.14);border:1px solid rgba(0,212,255,.35);color:#8ee9ff;
   }
-  .case-box p{color:var(--muted);max-width:760px}
-  .case-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px;margin-top:34px}
-  .metric{
-    background:rgba(10,14,26,.55);border:1px solid var(--border);border-radius:16px;padding:22px;text-align:center;
-  }
-  .metric b{display:block;font-size:1.9rem;
+
+  /* 什麼是 ECP */
+  .intro-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  @media(max-width:900px){.intro-wrap{grid-template-columns:1fr}}
+  .intro-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .intro-list li{color:var(--muted);font-size:.98rem;padding-left:30px;position:relative}
+  .intro-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--g2);font-weight:700}
+  .intro-list li strong{color:var(--text)}
+  .shot{border:1px solid var(--border);border-radius:18px;overflow:hidden;
+    background:rgba(255,255,255,.03);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .shot img{display:block;width:100%;height:auto}
+  .shot-cap{padding:14px 20px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+  .mini-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:34px}
+  .mini-stats div{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center}
+  .mini-stats b{display:block;font-size:1.4rem;
     background:linear-gradient(90deg,var(--g2),var(--g1));
     -webkit-background-clip:text;background-clip:text;color:transparent}
-  .metric span{color:var(--muted);font-size:.86rem}
-  .case-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:32px}
-  .case-list li{color:var(--muted);font-size:.94rem;padding-left:26px;position:relative}
-  .case-list li::before{
-    content:"✓";position:absolute;left:0;top:0;color:var(--g2);font-weight:700;
-  }
+  .mini-stats span{color:var(--muted);font-size:.82rem}
 
-  /* 平台功能導覽 */
+  /* 平台導覽 */
   .ptabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
   .ptab{cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--muted);
     padding:10px 20px;border-radius:999px;font-size:.92rem;font-family:inherit;transition:all .2s}
   .ptab:hover{border-color:var(--g2);color:var(--text)}
   .ptab.active{background:linear-gradient(90deg,var(--g1),var(--g2));color:#fff;border-color:transparent;font-weight:600}
-  .shot{border:1px solid var(--border);border-radius:18px;overflow:hidden;
-    background:rgba(10,14,26,.6);box-shadow:0 24px 60px rgba(0,0,0,.45)}
-  .shot img{display:block;width:100%;height:auto}
-  .shot-cap{padding:16px 22px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
   .tour-detail{margin-top:30px}
   .tour-detail h3{font-size:1.35rem;margin-bottom:10px}
-  .tour-detail>p{color:var(--muted);max-width:780px}
+  .tour-detail>p{color:var(--muted);max-width:820px}
 
+  /* 自動化 */
+  .auto-box{
+    border:1px solid var(--border);border-radius:26px;padding:48px 7%;
+    background:linear-gradient(135deg,rgba(255,92,168,.10),rgba(109,92,255,.12));
+  }
+  .auto-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:28px}
+  .auto-list li{color:var(--muted);font-size:.95rem;padding-left:28px;position:relative}
+  .auto-list li::before{content:"⚙";position:absolute;left:0;top:0;color:var(--g3)}
+  .auto-list li strong{color:var(--text)}
+
+  /* 架構 */
+  .arch-wrap{display:grid;grid-template-columns:1.35fr .65fr;gap:36px;align-items:start}
+  @media(max-width:900px){.arch-wrap{grid-template-columns:1fr}}
+  .arch-stack{display:flex;flex-direction:column;gap:8px}
+  .arch-layer{
+    background:var(--card);border:1px solid var(--border);border-left:4px solid var(--g1);
+    border-radius:12px;padding:16px 22px;font-size:.95rem;
+  }
+  .arch-layer b{color:var(--g2)}
+  .arch-arrow{text-align:center;color:var(--muted);font-size:.8rem;line-height:1}
+  .arch-side{
+    border:1px solid var(--border);border-radius:20px;padding:32px 28px;
+    background:linear-gradient(135deg,rgba(0,212,255,.10),rgba(109,92,255,.14));
+  }
+  .arch-side h3{margin-bottom:12px;font-size:1.1rem}
+  .arch-side p{color:var(--muted);font-size:.93rem}
+  .arch-note{margin-top:22px;color:var(--muted);font-size:.92rem;border-top:1px solid var(--border);padding-top:18px}
+  .arch-note strong{color:var(--text)}
+
+  /* 為何 ECP */
+  .why-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+  @media(max-width:900px){.why-wrap{grid-template-columns:1fr}}
+  .outcomes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .outcome{
+    background:var(--card);border:1px solid var(--border);border-left:4px solid var(--g2);
+    border-radius:14px;padding:20px 22px;font-weight:600;font-size:.98rem;
+  }
+
+  .case-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:26px}
+  .case-list li{color:var(--muted);font-size:.94rem;padding-left:26px;position:relative}
+  .case-list li::before{content:"✓";position:absolute;left:0;top:0;color:var(--g2);font-weight:700}
+
+  /* 關於 + 聯絡 */
   .about-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
   @media(max-width:860px){.about-wrap{grid-template-columns:1fr}}
   .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -141,11 +197,18 @@
     -webkit-background-clip:text;background-clip:text;color:transparent}
   .stat span{color:var(--muted);font-size:.88rem}
 
+  .steps{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:34px auto;text-align:left;max-width:900px}
+  .steps li{display:flex;gap:14px;align-items:flex-start;background:rgba(10,14,26,.5);
+    border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+  .steps b{flex:none;width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,var(--g1),var(--g2));color:#fff;font-size:.95rem}
+  .steps span{color:var(--muted);font-size:.92rem}
+
   .contact-box{
     background:linear-gradient(135deg,rgba(109,92,255,.12),rgba(0,212,255,.10));
     border:1px solid var(--border);border-radius:26px;padding:60px 8%;text-align:center;
   }
-  .contact-box p{color:var(--muted);margin:14px auto 34px;max-width:520px}
+  .contact-box>p.lead{color:var(--muted);margin:14px auto 0;max-width:560px}
   .contact-info{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:36px;color:var(--muted);font-size:.92rem}
   .contact-info b{color:var(--text);display:block;font-size:.8rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
 
@@ -159,10 +222,11 @@
 <nav>
   <div class="logo" id="brand">EpiGoal</div>
   <ul class="nav-links">
-    <li><a href="#services" data-i18n="nav.services">服務</a></li>
-    <li><a href="#case" data-i18n="nav.case">案例</a></li>
+    <li><a href="#challenge" data-i18n="nav.challenge">挑戰</a></li>
+    <li><a href="#features" data-i18n="nav.features">核心功能</a></li>
     <li><a href="#tour" data-i18n="nav.tour">平台導覽</a></li>
-    <li><a href="#about" data-i18n="nav.about">關於我們</a></li>
+    <li><a href="#arch" data-i18n="nav.arch">架構</a></li>
+    <li><a href="#why" data-i18n="nav.why">為何 ECP</a></li>
     <li><a href="#contact" data-i18n="nav.contact">聯絡我們</a></li>
     <li><button class="lang-btn" id="langToggle">EN</button></li>
   </ul>
@@ -171,77 +235,70 @@
 <main>
   <!-- Hero -->
   <div class="hero">
-    <span class="badge" data-i18n="hero.badge">已落地項目：ERP Central Platform · Epicor / SAP / HKERP 整合</span>
-    <h1 data-i18n-html="hero.title">把分散的 ERP、EDI 與報表<br>整合成<span class="grad">一個平台</span></h1>
-    <p data-i18n="hero.sub">我們專注企業系統集成——把 ERP、EDI、數據倉庫與日常報表整合到單一入口，讓管理層一眼看清數據，讓團隊少做重複功夫。</p>
+    <span class="badge" data-i18n="hero.badge">產品介紹 · ERP Central Platform（ECP）· ERP 中央平台</span>
+    <h1 data-i18n-html="hero.title">一套平台，整合<span class="grad">所有 ERP 系統</span></h1>
+    <p data-i18n="hero.sub">資料、報表、自動化與治理——全部集中在一個安全入口。One platform for all your ERP systems.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">免費諮詢</a>
-      <a class="btn btn-ghost" href="#case" data-i18n="hero.cta2">看實際案例</a>
+      <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">用你的資料看看 ECP</a>
+      <a class="btn btn-ghost" href="#tour" data-i18n="hero.cta2">功能導覽</a>
     </div>
   </div>
 
-  <!-- Services -->
-  <section id="services">
-    <h2 class="sec-title" data-i18n="services.title">我們的服務</h2>
-    <p class="sec-sub" data-i18n="services.sub">從系統對接、數據整合到報表自動化，我們交付的是能真正用起來的方案。</p>
-    <div class="grid">
-      <div class="card">
-        <div class="icon">🔗</div>
-        <h3 data-i18n="services.1.t">ERP 系統集成</h3>
-        <p data-i18n="services.1.p">Epicor、SAP、HKERP 等多套系統的數據對接與同步，消除跨系統孤島，確保單一數據來源。</p>
-      </div>
-      <div class="card">
-        <div class="icon">📡</div>
-        <h3 data-i18n="services.2.t">EDI 電子數據交換</h3>
-        <p data-i18n="services.2.p">對接大型零售商 EDI 標準，自動收發訂單、發貨通知與發票，減少人手輸入與出錯風險。</p>
-      </div>
-      <div class="card">
-        <div class="icon">🖥️</div>
-        <h3 data-i18n="services.3.t">企業入口平台開發</h3>
-        <p data-i18n="services.3.p">單一登入、統一菜單與個人化儀表板，讓員工在一個平台存取所有系統與報表。</p>
-      </div>
-      <div class="card">
-        <div class="icon">📊</div>
-        <h3 data-i18n="services.4.t">數據倉庫與商業智能</h3>
-        <p data-i18n="services.4.p">ETL 數據管道、數據倉庫建設與互動式報表，把分散數據變成可決策的指標。</p>
-      </div>
-      <div class="card">
-        <div class="icon">⚙️</div>
-        <h3 data-i18n="services.5.t">流程自動化</h3>
-        <p data-i18n="services.5.p">定時批次作業、數據同步與異常預警，取代人手導出對數，把時間還給團隊。</p>
-      </div>
-      <div class="card">
-        <div class="icon">🛡️</div>
-        <h3 data-i18n="services.6.t">權限治理與安全</h3>
-        <p data-i18n="services.6.p">角色權限控管、操作審計軌跡，以及測試與生產環境隔離，保障企業數據安全。</p>
+  <!-- Challenge -->
+  <section id="challenge">
+    <h2 class="sec-title" data-i18n="ch.title">今天的挑戰</h2>
+    <p class="sec-sub" data-i18n="ch.sub">多套系統、同一團隊、資料分散。Many systems, one team, scattered data.</p>
+    <div class="challenge-wrap">
+      <ul class="pain">
+        <li><b>1</b><span data-i18n="ch.p1">多套 ERP 系統加上大量試算表，缺乏統一的業務視圖。</span></li>
+        <li><b>2</b><span data-i18n="ch.p2">人工彙整與重覆輸入，讓報表產出緩慢且容易出錯。</span></li>
+        <li><b>3</b><span data-i18n="ch.p3">每天重覆的 ERP 資料輸入，耗費有價值的人力。</span></li>
+        <li><b>4</b><span data-i18n="ch.p4">安全地分享報表，往往要仰賴臨時的 IT 工單。</span></li>
+        <li><b>5</b><span data-i18n="ch.p5">較少稽核記錄：誰存取了什麼、改動了什麼、數字從何而來。</span></li>
+      </ul>
+      <div class="eco-box">
+        <span class="tag" data-i18n="ch.tag">ECP 的答案</span>
+        <h3 data-i18n="ch.box.t">ECP 把它整合在一起</h3>
+        <p data-i18n="ch.box.p">單一登入、統一資料倉儲、一套跨所有 ERP 的報表與自動化層。One sign-in, one warehouse, one reporting and automation layer across every ERP you run.</p>
       </div>
     </div>
   </section>
 
-  <!-- Case Study -->
-  <section id="case">
-    <h2 class="sec-title" data-i18n="case.title">代表案例</h2>
-    <p class="sec-sub" data-i18n="case.sub">不是概念演示，是每天在運作的系統。</p>
-    <div class="case-box">
-      <div class="case-head">
-        <h3 style="font-size:1.5rem">ERP Central Platform</h3>
-        <span class="tag" data-i18n="case.tag">製造業 · 跨境多廠</span>
+  <!-- Core functions -->
+  <section id="features">
+    <h2 class="sec-title" data-i18n="ft.title">六大核心功能</h2>
+    <p class="sec-sub" data-i18n="ft.sub">六大能力，一套平台。Six capabilities, one platform.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🔑</div>
+        <h3 data-i18n="ft.1.t">統一存取與導覽</h3>
+        <p data-i18n="ft.1.p">單一登入、角色選單，跨所有 ERP 的一致模組頁面。</p>
       </div>
-      <p data-i18n="case.p">為跨地區製造集團打造的統一 ERP 入口平台。以往同事要在多套系統之間切換、人手導出 Excel 對數；現在一個平台集中處理 Epicor 生產數據、HKERP 業務數據、EDI 往來、客戶報價單與成本核算，管理層打開儀表板即可掌握營運全貌。</p>
-      <div class="case-metrics">
-        <div class="metric"><b>7</b><span data-i18n="case.m1">整合功能模組</span></div>
-        <div class="metric"><b>3</b><span data-i18n="case.m2">套 ERP 系統對接</span></div>
-        <div class="metric"><b>20+</b><span data-i18n="case.m3">自動化報表頁</span></div>
-        <div class="metric"><b>1</b><span data-i18n="case.m4">個統一登入入口</span></div>
+      <div class="card">
+        <div class="icon">🗄️</div>
+        <h3 data-i18n="ft.2.t">資料倉儲</h3>
+        <p data-i18n="ft.2.p">連接 SQL／Oracle／PostgreSQL／Excel，抽取暫存、清理與整合。</p>
       </div>
-      <ul class="case-list">
-        <li data-i18n="case.l1">Epicor 模組：物料對照、成本核算、配件訂單、模具與外廠數據追蹤</li>
-        <li data-i18n="case.l2">Data Control Center：跨公司交易、會計分錄與期間結帳監控</li>
-        <li data-i18n="case.l3">客戶報價單（QuoteSheet）與待處理報價集中管理</li>
-        <li data-i18n="case.l4">個人化 Data Terminal：自選常用數據頻道，登入即看</li>
-        <li data-i18n="case.l5">角色權限與系統設定集中控管，測試／生產環境分明</li>
-        <li data-i18n="case.l6">全站搜尋、我的最愛、最近使用，減少查找時間</li>
-      </ul>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3 data-i18n="ft.3.t">自助 BI 報表</h3>
+        <p data-i18n="ft.3.p">多面板儀表板、多樣圖表、明暗主題，並有 AI 協助建立。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔗</div>
+        <h3 data-i18n="ft.4.t">受控分享</h3>
+        <p data-i18n="ft.4.p">將報表發佈為選單項目，含逐報表權限、資料夾與擁有者主題。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3 data-i18n="ft.5.t">自動化</h3>
+        <p data-i18n="ft.5.p">文件 OCR ＋ ERP 桌面自動化，處理重覆資料輸入，可依排程執行。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3 data-i18n="ft.6.t">保安與治理</h3>
+        <p data-i18n="ft.6.p">加密憑證、完整操作記錄、環境登錄與受控存取。</p>
+      </div>
     </div>
   </section>
 
@@ -253,33 +310,138 @@
     <div id="tourBody"></div>
   </section>
 
+  <!-- Automation -->
+  <section id="automation">
+    <div class="auto-box">
+      <h2 class="sec-title" data-i18n="au.title">自動化</h2>
+      <p class="sec-sub" style="margin-bottom:0" data-i18n="au.sub">把文件與螢幕畫面變成乾淨資料。From documents and screens to clean data.</p>
+      <ul class="auto-list">
+        <li data-i18n="au.1"><strong>OCR 擷取：</strong>將銷售訂單與品質文件由圖片/PDF 辨識並對映為結構化記錄。</li>
+        <li data-i18n="au.2"><strong>ERP 桌面自動化：</strong>逐步操作傳統 ERP 畫面（如訂單輸入），減少人工輸入。</li>
+        <li data-i18n="au.3"><strong>排程批次同步：</strong>讓倉儲資料保持最新，無需人工觸發。</li>
+        <li data-i18n="au.4"><strong>工作流程編排：</strong>串起擷取、刷新與報表。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section id="arch">
+    <h2 class="sec-title" data-i18n="ar.title">系統運作方式</h2>
+    <p class="sec-sub" data-i18n="ar.sub">架構——資料永遠屬於你。Architecture — your data stays yours.</p>
+    <div class="arch-wrap">
+      <div class="arch-stack">
+        <div class="arch-layer"><b data-i18n="ar.l1b">使用者</b> · <span data-i18n="ar.l1">任何瀏覽器，單一登入</span></div>
+        <div class="arch-arrow">▼</div>
+        <div class="arch-layer"><b data-i18n="ar.l2b">前端</b> · <span data-i18n="ar.l2">React 網頁應用（響應式，免安裝）</span></div>
+        <div class="arch-arrow">▼</div>
+        <div class="arch-layer"><b data-i18n="ar.l3b">服務</b> · <span data-i18n="ar.l3">驗證、資料倉儲、BI、分享、OCR、自動化、操作記錄</span></div>
+        <div class="arch-arrow">▼</div>
+        <div class="arch-layer"><b data-i18n="ar.l4b">資料</b> · <span data-i18n="ar.l4">平台 SQL Server ＋ 專用倉儲 ＋ 連線器（SQL／Oracle／PostgreSQL／Excel）</span></div>
+        <div class="arch-arrow">▼</div>
+        <div class="arch-layer"><b data-i18n="ar.l5b">自動化與整合</b> · <span data-i18n="ar.l5">工作流程引擎、OCR 引擎、ERP 桌面 RPA、排程同步</span></div>
+      </div>
+      <div>
+        <div class="arch-side">
+          <h3 data-i18n="ar.side.t">🔒 保安與治理</h3>
+          <p data-i18n="ar.side.p">加密憑證庫（AES-256-GCM）· 角色權限 · 完整稽核記錄</p>
+        </div>
+        <p class="arch-note" data-i18n="ar.note">ECP 讀取你現有的資料庫，不會搬遷它們——它是疊在上層的中央平台。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security -->
+  <section id="security">
+    <h2 class="sec-title" data-i18n="se.title">保安與治理</h2>
+    <p class="sec-sub" data-i18n="se.sub">天生值得信賴。Trustworthy by design.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🔐</div>
+        <h3 data-i18n="se.1.t">加密憑證</h3>
+        <p data-i18n="se.1.p">資料庫與 API 密碼以 AES-256-GCM 密文儲存，絕不離開伺服器；清單僅顯示「已設定密碼」。</p>
+      </div>
+      <div class="card">
+        <div class="icon">📜</div>
+        <h3 data-i18n="se.2.t">完整操作記錄</h3>
+        <p data-i18n="se.2.p">登入、刷新、整合、匯出與管理異動都會記錄，附逐步追蹤與 IP／裝置資訊。</p>
+      </div>
+      <div class="card">
+        <div class="icon">👤</div>
+        <h3 data-i18n="se.3.t">角色權限</h3>
+        <p data-i18n="se.3.p">逐使用者模組權限加上逐報表分享，皆於伺服器端強制；暫停的帳號會被封鎖。</p>
+      </div>
+      <div class="card">
+        <div class="icon">📖</div>
+        <h3 data-i18n="se.4.t">唯讀且白名單化</h3>
+        <p data-i18n="se.4.p">自訂資料集 SQL 僅限單一唯讀 SELECT；報表識別碼依真實欄位白名單驗證。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🖥️</div>
+        <h3 data-i18n="se.5.t">環境登錄</h3>
+        <p data-i18n="se.5.p">伺服器／資料庫設定檔密碼遮罩並附連線測試，正式與測試環境分明。</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚙️</div>
+        <h3 data-i18n="se.6.t">可部署服務</h3>
+        <p data-i18n="se.6.p">以受管理的背景服務執行；前端可熱更新，後端可乾淨重啟。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why ECP -->
+  <section id="why">
+    <h2 class="sec-title" data-i18n="wy.title">為何選擇 ECP</h2>
+    <p class="sec-sub" data-i18n="wy.sub">對你最重要的亮點。The selling points that matter to you.</p>
+    <div class="why-wrap">
+      <ul class="intro-list">
+        <li data-i18n="wy.b1">一套登入、一個畫面整合所有 ERP——告別視窗切換與重覆輸入。</li>
+        <li data-i18n="wy.b2">分散的 ERP 與 Excel 資料，變成可無程式碼連結的受管倉儲。</li>
+        <li data-i18n="wy.b3">自助儀表板加上 AI，把報表建立時間從數天縮短到數分鐘。</li>
+        <li data-i18n="wy.b4">以伺服器端的逐報表權限安全分享——不必再等 IT 工單。</li>
+        <li data-i18n="wy.b5">自動化文件擷取（OCR）與重覆的 ERP 輸入（桌面 RPA）。</li>
+        <li data-i18n="wy.b6">操作記錄與加密憑證，使其安全且便於合規。</li>
+      </ul>
+      <div class="outcomes">
+        <div class="outcome" data-i18n="wy.o1">更快速的報表</div>
+        <div class="outcome" data-i18n="wy.o2">唯一的正確資料來源</div>
+        <div class="outcome" data-i18n="wy.o3">降低人工與錯誤</div>
+        <div class="outcome" data-i18n="wy.o4">受控且可稽核的分享</div>
+      </div>
+    </div>
+  </section>
+
   <!-- About -->
   <section id="about">
     <div class="about-wrap">
       <div>
         <h2 class="sec-title" data-i18n="about.title">關於我們</h2>
-        <p class="sec-sub" data-i18n="about.p1">EpiGoal Consulting Technology Limited 是一間立足香港的顧問及科技公司。我們不是單純寫程式的供應商——我們先理解你的業務流程，再用技術把它簡化。</p>
-        <p class="sec-sub" data-i18n="about.p2">我們熟悉製造業與跨地區營運的實際痛點：系統太多、數據對不上、報表靠人手。從 ERP 集成、EDI 對接到數據倉庫，我們交付的是每天真的有人在用、而且用得順手的系統。</p>
+        <p class="sec-sub" data-i18n="about.p1">ECP 由 EpiGoal Consulting Technology Limited 開發——一間立足香港的顧問及科技公司。我們不是單純寫程式的供應商——我們先理解你的業務流程，再用技術把它簡化。</p>
+        <p class="sec-sub" data-i18n="about.p2">我們熟悉製造業與跨地區營運的實際痛點：系統太多、數據對不上、報表靠人手。ECP 正是從這些日常痛點打磨出來的產品。</p>
       </div>
       <div class="stats">
-        <div class="stat"><b>10+</b><span data-i18n="about.s1">年企業系統經驗</span></div>
-        <div class="stat"><b>7</b><span data-i18n="about.s2">個平台功能模組</span></div>
-        <div class="stat"><b>3</b><span data-i18n="about.s3">套 ERP 整合經驗</span></div>
-        <div class="stat"><b>100%</b><span data-i18n="about.s4">專注企業系統集成</span></div>
+        <div class="stat"><b>5+</b><span data-i18n="about.s1">套 ERP 系統串接</span></div>
+        <div class="stat"><b>6</b><span data-i18n="about.s2">大核心能力</span></div>
+        <div class="stat"><b>100%</b><span data-i18n="about.s3">網頁化，免安裝</span></div>
+        <div class="stat"><b>24/7</b><span data-i18n="about.s4">排程自動化運行</span></div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact / Next steps -->
   <section id="contact">
     <div class="contact-box">
-      <h2 class="sec-title" data-i18n="contact.title">聊聊你的系統難題</h2>
-      <p data-i18n="contact.sub">ERP 對不上數、報表靠人手做、系統太多太散？告訴我們現況，我們會在 1 個工作天內回覆，並給出初步的改善方向。</p>
-      <a class="btn btn-primary" href="mailto:info@epigoal.com" data-i18n="contact.cta">發送電郵</a>
+      <h2 class="sec-title" data-i18n="ct.title">用你們的資料，親自看看 ECP</h2>
+      <p class="lead" data-i18n="ct.sub">三步開始：揀系統 → 我們建倉儲與儀表板 → 推展受控分享與自動化。</p>
+      <ul class="steps">
+        <li><b>1</b><span data-i18n="ct.s1">先選 1–2 套 ERP，以及團隊每週重做的那些報表。</span></li>
+        <li><b>2</b><span data-i18n="ct.s2">我們完成連線、建立倉儲資料集與一個共用儀表板。</span></li>
+        <li><b>3</b><span data-i18n="ct.s3">再將受控分享與自動化推展給需要的人員。</span></li>
+      </ul>
+      <a class="btn btn-primary" href="mailto:info@epigoal.com" data-i18n="ct.cta">發送電郵，預約示範</a>
       <div class="contact-info">
-        <div><b data-i18n="contact.email">電郵</b>info@epigoal.com</div>
-        <div><b data-i18n="contact.addr">地址</b><span data-i18n="contact.addr.v">中國香港 · 香港島</span></div>
-        <div><b data-i18n="contact.hours">辦公時間</b><span data-i18n="contact.hours.v">星期一至五 9:00–18:00</span></div>
+        <div><b data-i18n="ct.email">電郵</b>info@epigoal.com</div>
+        <div><b data-i18n="ct.addr">地址</b><span data-i18n="ct.addr.v">中國香港 · 香港島</span></div>
+        <div><b data-i18n="ct.hours">辦公時間</b><span data-i18n="ct.hours.v">星期一至五 9:00–18:00</span></div>
       </div>
     </div>
   </section>
@@ -292,170 +454,250 @@
 <script>
 const i18n = {
   zh: {
-    "nav.services":"服務","nav.case":"案例","nav.tour":"平台導覽","nav.about":"關於我們","nav.contact":"聯絡我們",
-    "hero.badge":"已落地項目：ERP Central Platform · Epicor / SAP / HKERP 整合",
-    "hero.title":'把分散的 ERP、EDI 與報表<br>整合成<span class="grad">一個平台</span>',
-    "hero.sub":"我們專注企業系統集成——把 ERP、EDI、數據倉庫與日常報表整合到單一入口，讓管理層一眼看清數據，讓團隊少做重複功夫。",
-    "hero.cta1":"免費諮詢","hero.cta2":"看實際案例",
-    "services.title":"我們的服務","services.sub":"從系統對接、數據整合到報表自動化，我們交付的是能真正用起來的方案。",
-    "services.1.t":"ERP 系統集成","services.1.p":"Epicor、SAP、HKERP 等多套系統的數據對接與同步，消除跨系統孤島，確保單一數據來源。",
-    "services.2.t":"EDI 電子數據交換","services.2.p":"對接大型零售商 EDI 標準，自動收發訂單、發貨通知與發票，減少人手輸入與出錯風險。",
-    "services.3.t":"企業入口平台開發","services.3.p":"單一登入、統一菜單與個人化儀表板，讓員工在一個平台存取所有系統與報表。",
-    "services.4.t":"數據倉庫與商業智能","services.4.p":"ETL 數據管道、數據倉庫建設與互動式報表，把分散數據變成可決策的指標。",
-    "services.5.t":"流程自動化","services.5.p":"定時批次作業、數據同步與異常預警，取代人手導出對數，把時間還給團隊。",
-    "services.6.t":"權限治理與安全","services.6.p":"角色權限控管、操作審計軌跡，以及測試與生產環境隔離，保障企業數據安全。",
-    "case.title":"代表案例","case.sub":"不是概念演示，是每天在運作的系統。","case.tag":"製造業 · 跨境多廠",
-    "case.p":"為跨地區製造集團打造的統一 ERP 入口平台。以往同事要在多套系統之間切換、人手導出 Excel 對數；現在一個平台集中處理 Epicor 生產數據、HKERP 業務數據、EDI 往來、客戶報價單與成本核算，管理層打開儀表板即可掌握營運全貌。",
-    "case.m1":"整合功能模組","case.m2":"套 ERP 系統對接","case.m3":"自動化報表頁","case.m4":"個統一登入入口",
-    "case.l1":"Epicor 模組：物料對照、成本核算、配件訂單、模具與外廠數據追蹤",
-    "case.l2":"Data Control Center：跨公司交易、會計分錄與期間結帳監控",
-    "case.l3":"客戶報價單（QuoteSheet）與待處理報價集中管理",
-    "case.l4":"個人化 Data Terminal：自選常用數據頻道，登入即看",
-    "case.l5":"角色權限與系統設定集中控管，測試／生產環境分明",
-    "case.l6":"全站搜尋、我的最愛、最近使用，減少查找時間",
-    "about.title":"關於我們",
-    "about.p1":"EpiGoal Consulting Technology Limited 是一間立足香港的顧問及科技公司。我們不是單純寫程式的供應商——我們先理解你的業務流程，再用技術把它簡化。",
-    "about.p2":"我們熟悉製造業與跨地區營運的實際痛點：系統太多、數據對不上、報表靠人手。從 ERP 集成、EDI 對接到數據倉庫，我們交付的是每天真的有人在用、而且用得順手的系統。",
-    "about.s1":"年企業系統經驗","about.s2":"個平台功能模組","about.s3":"套 ERP 整合經驗","about.s4":"專注企業系統集成",
-    "contact.title":"聊聊你的系統難題",
-    "contact.sub":"ERP 對不上數、報表靠人手做、系統太多太散？告訴我們現況，我們會在 1 個工作天內回覆，並給出初步的改善方向。",
-    "contact.cta":"發送電郵",
-    "contact.email":"電郵","contact.addr":"地址","contact.addr.v":"中國香港 · 香港島",
-    "contact.hours":"辦公時間","contact.hours.v":"星期一至五 9:00–18:00",
-    "footer":"© 2026 EpiGoal Consulting Technology Limited · 版權所有",
+    "nav.challenge":"挑戰","nav.features":"核心功能","nav.tour":"平台導覽","nav.arch":"架構","nav.why":"為何 ECP","nav.contact":"聯絡我們",
+    "hero.badge":"產品介紹 · ERP Central Platform（ECP）· ERP 中央平台",
+    "hero.title":'一套平台，整合<span class="grad">所有 ERP 系統</span>',
+    "hero.sub":"資料、報表、自動化與治理——全部集中在一個安全入口。One platform for all your ERP systems.",
+    "hero.cta1":"用你的資料看看 ECP","hero.cta2":"功能導覽",
+    "ch.title":"今天的挑戰",
+    "ch.sub":"多套系統、同一團隊、資料分散。Many systems, one team, scattered data.",
+    "ch.p1":"多套 ERP 系統加上大量試算表，缺乏統一的業務視圖。",
+    "ch.p2":"人工彙整與重覆輸入，讓報表產出緩慢且容易出錯。",
+    "ch.p3":"每天重覆的 ERP 資料輸入，耗費有價值的人力。",
+    "ch.p4":"安全地分享報表，往往要仰賴臨時的 IT 工單。",
+    "ch.p5":"較少稽核記錄：誰存取了什麼、改動了什麼、數字從何而來。",
+    "ch.tag":"ECP 的答案",
+    "ch.box.t":"ECP 把它整合在一起",
+    "ch.box.p":"單一登入、統一資料倉儲、一套跨所有 ERP 的報表與自動化層。One sign-in, one warehouse, one reporting and automation layer across every ERP you run.",
+    "ft.title":"六大核心功能",
+    "ft.sub":"六大能力，一套平台。Six capabilities, one platform.",
+    "ft.1.t":"統一存取與導覽","ft.1.p":"單一登入、角色選單，跨所有 ERP 的一致模組頁面。",
+    "ft.2.t":"資料倉儲","ft.2.p":"連接 SQL／Oracle／PostgreSQL／Excel，抽取暫存、清理與整合。",
+    "ft.3.t":"自助 BI 報表","ft.3.p":"多面板儀表板、多樣圖表、明暗主題，並有 AI 協助建立。",
+    "ft.4.t":"受控分享","ft.4.p":"將報表發佈為選單項目，含逐報表權限、資料夾與擁有者主題。",
+    "ft.5.t":"自動化","ft.5.p":"文件 OCR ＋ ERP 桌面自動化，處理重覆資料輸入，可依排程執行。",
+    "ft.6.t":"保安與治理","ft.6.p":"加密憑證、完整操作記錄、環境登錄與受控存取。",
     "tour.title":"平台功能導覽",
     "tour.sub":"真實介面截圖——點下面的選單，逐個模組睇。",
-    "tour.cap":"ERP Central Platform 實際介面 · 示範環境數據"
+    "tour.cap":"ERP Central Platform 實際介面 · 示範環境數據",
+    "au.title":"自動化",
+    "au.sub":"把文件與螢幕畫面變成乾淨資料。From documents and screens to clean data.",
+    "au.1":"OCR 擷取：將銷售訂單與品質文件由圖片/PDF 辨識並對映為結構化記錄。",
+    "au.2":"ERP 桌面自動化：逐步操作傳統 ERP 畫面（如訂單輸入），減少人工輸入。",
+    "au.3":"排程批次同步：讓倉儲資料保持最新，無需人工觸發。",
+    "au.4":"工作流程編排：串起擷取、刷新與報表。",
+    "ar.title":"系統運作方式",
+    "ar.sub":"架構——資料永遠屬於你。Architecture — your data stays yours.",
+    "ar.l1b":"使用者","ar.l1":"任何瀏覽器，單一登入",
+    "ar.l2b":"前端","ar.l2":"React 網頁應用（響應式，免安裝）",
+    "ar.l3b":"服務","ar.l3":"驗證、資料倉儲、BI、分享、OCR、自動化、操作記錄",
+    "ar.l4b":"資料","ar.l4":"平台 SQL Server ＋ 專用倉儲 ＋ 連線器（SQL／Oracle／PostgreSQL／Excel）",
+    "ar.l5b":"自動化與整合","ar.l5":"工作流程引擎、OCR 引擎、ERP 桌面 RPA、排程同步",
+    "ar.side.t":"🔒 保安與治理",
+    "ar.side.p":"加密憑證庫（AES-256-GCM）· 角色權限 · 完整稽核記錄",
+    "ar.note":"ECP 讀取你現有的資料庫，不會搬遷它們——它是疊在上層的中央平台。",
+    "se.title":"保安與治理",
+    "se.sub":"天生值得信賴。Trustworthy by design.",
+    "se.1.t":"加密憑證","se.1.p":"資料庫與 API 密碼以 AES-256-GCM 密文儲存，絕不離開伺服器；清單僅顯示「已設定密碼」。",
+    "se.2.t":"完整操作記錄","se.2.p":"登入、刷新、整合、匯出與管理異動都會記錄，附逐步追蹤與 IP／裝置資訊。",
+    "se.3.t":"角色權限","se.3.p":"逐使用者模組權限加上逐報表分享，皆於伺服器端強制；暫停的帳號會被封鎖。",
+    "se.4.t":"唯讀且白名單化","se.4.p":"自訂資料集 SQL 僅限單一唯讀 SELECT；報表識別碼依真實欄位白名單驗證。",
+    "se.5.t":"環境登錄","se.5.p":"伺服器／資料庫設定檔密碼遮罩並附連線測試，正式與測試環境分明。",
+    "se.6.t":"可部署服務","se.6.p":"以受管理的背景服務執行；前端可熱更新，後端可乾淨重啟。",
+    "wy.title":"為何選擇 ECP",
+    "wy.sub":"對你最重要的亮點。The selling points that matter to you.",
+    "wy.b1":"一套登入、一個畫面整合所有 ERP——告別視窗切換與重覆輸入。",
+    "wy.b2":"分散的 ERP 與 Excel 資料，變成可無程式碼連結的受管倉儲。",
+    "wy.b3":"自助儀表板加上 AI，把報表建立時間從數天縮短到數分鐘。",
+    "wy.b4":"以伺服器端的逐報表權限安全分享——不必再等 IT 工單。",
+    "wy.b5":"自動化文件擷取（OCR）與重覆的 ERP 輸入（桌面 RPA）。",
+    "wy.b6":"操作記錄與加密憑證，使其安全且便於合規。",
+    "wy.o1":"更快速的報表","wy.o2":"唯一的正確資料來源","wy.o3":"降低人工與錯誤","wy.o4":"受控且可稽核的分享",
+    "about.title":"關於我們",
+    "about.p1":"ECP 由 EpiGoal Consulting Technology Limited 開發——一間立足香港的顧問及科技公司。我們不是單純寫程式的供應商——我們先理解你的業務流程，再用技術把它簡化。",
+    "about.p2":"我們熟悉製造業與跨地區營運的實際痛點：系統太多、數據對不上、報表靠人手。ECP 正是從這些日常痛點打磨出來的產品。",
+    "about.s1":"套 ERP 系統串接","about.s2":"大核心能力","about.s3":"網頁化，免安裝","about.s4":"排程自動化運行",
+    "ct.title":"用你們的資料，親自看看 ECP",
+    "ct.sub":"三步開始：揀系統 → 我們建倉儲與儀表板 → 推展受控分享與自動化。",
+    "ct.s1":"先選 1–2 套 ERP，以及團隊每週重做的那些報表。",
+    "ct.s2":"我們完成連線、建立倉儲資料集與一個共用儀表板。",
+    "ct.s3":"再將受控分享與自動化推展給需要的人員。",
+    "ct.cta":"發送電郵，預約示範",
+    "ct.email":"電郵","ct.addr":"地址","ct.addr.v":"中國香港 · 香港島",
+    "ct.hours":"辦公時間","ct.hours.v":"星期一至五 9:00–18:00",
+    "footer":"© 2026 EpiGoal Consulting Technology Limited · 版權所有"
   },
   en: {
-    "nav.services":"Services","nav.case":"Case Study","nav.tour":"Platform Tour","nav.about":"About","nav.contact":"Contact",
-    "hero.badge":"Live in production: ERP Central Platform · Epicor / SAP / HKERP integration",
-    "hero.title":'Unify scattered ERP, EDI<br>and reporting into <span class="grad">one platform</span>',
-    "hero.sub":"We specialise in enterprise system integration — consolidating ERP, EDI, data warehouses and daily reports into a single portal, so management sees the whole picture and teams stop doing the same work twice.",
-    "hero.cta1":"Free Consultation","hero.cta2":"See the Case Study",
-    "services.title":"Our Services","services.sub":"From system integration and data consolidation to report automation — we deliver solutions people actually use.",
-    "services.1.t":"ERP System Integration","services.1.p":"Connect and synchronise Epicor, SAP, HKERP and other systems — eliminating data silos and establishing a single source of truth.",
-    "services.2.t":"EDI Implementation","services.2.p":"Integrate with major retailers' EDI standards — automated exchange of orders, dispatch notices and invoices that removes manual entry and its errors.",
-    "services.3.t":"Enterprise Portal Development","services.3.p":"Single sign-on, unified navigation and personalised dashboards — one platform for every system and report your team needs.",
-    "services.4.t":"Data Warehouse & BI","services.4.p":"ETL pipelines, data warehouse design and interactive reporting that turn scattered data into decision-ready metrics.",
-    "services.5.t":"Process Automation","services.5.p":"Scheduled batch jobs, data synchronisation and exception alerts that replace manual exports and reconciliation.",
-    "services.6.t":"Governance & Security","services.6.p":"Role-based access control, audit trails and clear separation of testing and production environments.",
-    "case.title":"Case Study","case.sub":"Not a concept demo — a system running in production every day.","case.tag":"Manufacturing · Multi-site",
-    "case.p":"A unified ERP portal built for a multi-site manufacturing group. Staff used to juggle several systems and reconcile Excel exports by hand. Today one platform consolidates Epicor production data, HKERP business data, EDI transactions, customer quotations and costing — with management dashboards that show the full picture at a glance.",
-    "case.m1":"Integrated modules","case.m2":"ERP systems connected","case.m3":"Automated report pages","case.m4":"Unified login portal",
-    "case.l1":"Epicor module: item mapping, costing, component orders, tooling and external-factory tracking",
-    "case.l2":"Data Control Center: intercompany transactions, journal entries and period-close monitoring",
-    "case.l3":"Customer QuoteSheet with centralised open-quote tracking",
-    "case.l4":"Personalised Data Terminal — pin the data channels you use, see them on every login",
-    "case.l5":"Centralised role permissions and system configuration, with clear test/production separation",
-    "case.l6":"Global search, favourites and recent items to cut time spent hunting for functions",
-    "about.title":"About Us",
-    "about.p1":"EpiGoal Consulting Technology Limited is a Hong Kong-based consulting and technology company. We are not just a coding vendor — we understand your business process first, then simplify it with technology.",
-    "about.p2":"We know the real pain of manufacturing and cross-border operations: too many systems, data that never matches, reports built by hand. From ERP integration and EDI to data warehousing, we deliver systems that people genuinely use — and use comfortably.",
-    "about.s1":"Years in enterprise systems","about.s2":"Platform modules delivered","about.s3":"ERP systems integrated","about.s4":"Focused on integration",
-    "contact.title":"Let's Talk About Your Systems",
-    "contact.sub":"ERP figures that never match? Reports built by hand? Too many scattered systems? Tell us where you are — we reply within 1 business day with an initial direction.",
-    "contact.cta":"Send Email",
-    "contact.email":"Email","contact.addr":"Address","contact.addr.v":"Hong Kong Island, Hong Kong, China",
-    "contact.hours":"Office Hours","contact.hours.v":"Mon–Fri 9:00–18:00",
-    "footer":"© 2026 EpiGoal Consulting Technology Limited · All Rights Reserved",
+    "nav.challenge":"The Challenge","nav.features":"Core Functions","nav.tour":"Platform Tour","nav.arch":"Architecture","nav.why":"Why ECP","nav.contact":"Contact",
+    "hero.badge":"Product Introduction · ERP Central Platform (ECP)",
+    "hero.title":'One platform for <span class="grad">all your ERP systems</span>',
+    "hero.sub":"Data, reporting, automation and governance — consolidated into one secure portal.",
+    "hero.cta1":"See ECP on Your Own Data","hero.cta2":"Platform Tour",
+    "ch.title":"The Challenge",
+    "ch.sub":"Many systems, one team, scattered data.",
+    "ch.p1":"Several separate ERP systems and countless spreadsheets — no single view of the business.",
+    "ch.p2":"Manual data assembly and re-keying make reporting slow and error-prone.",
+    "ch.p3":"Repetitive ERP data entry consumes valuable staff hours every day.",
+    "ch.p4":"Sharing reports safely depends on ad-hoc IT tickets.",
+    "ch.p5":"Little audit trail of who accessed or changed what, and where the numbers came from.",
+    "ch.tag":"The ECP answer",
+    "ch.box.t":"ECP brings it together",
+    "ch.box.p":"One sign-in, one warehouse, one reporting and automation layer across every ERP you run.",
+    "ft.title":"Six Core Functions",
+    "ft.sub":"Six capabilities, one platform.",
+    "ft.1.t":"Unified Access & Navigation","ft.1.p":"Single sign-on, role-based menus and consistent module pages across every ERP.",
+    "ft.2.t":"Data Warehouse","ft.2.p":"Connect SQL / Oracle / PostgreSQL / Excel — extract, stage, cleanse and consolidate.",
+    "ft.3.t":"Self-Service BI Reports","ft.3.p":"Multi-panel dashboards, a rich chart library, light & dark themes — with AI assistance.",
+    "ft.4.t":"Governed Sharing","ft.4.p":"Publish reports as menu items with per-report access, folders and owner themes.",
+    "ft.5.t":"Automation","ft.5.p":"Document OCR plus ERP desktop automation for repetitive entry — on a schedule.",
+    "ft.6.t":"Security & Governance","ft.6.p":"Encrypted credentials, full activity log, environment registry and governed access.",
     "tour.title":"Platform Tour",
     "tour.sub":"Real screenshots — click the menu below to explore each module.",
-    "tour.cap":"Actual ERP Central Platform interface · demo environment data"
+    "tour.cap":"Actual ERP Central Platform interface · demo environment data",
+    "au.title":"Automation",
+    "au.sub":"From documents and screens to clean data.",
+    "au.1":"OCR capture: read sales orders and quality documents from images/PDFs into structured, mapped records.",
+    "au.2":"ERP desktop automation: drive legacy ERP screens (e.g. order entry) step-by-step, reducing manual keying.",
+    "au.3":"Scheduled batch sync: keeps warehouse data fresh without anyone pressing a button.",
+    "au.4":"Workflow orchestration: ties captures, refreshes and reports together.",
+    "ar.title":"How It Works",
+    "ar.sub":"Architecture — your data stays yours.",
+    "ar.l1b":"Users","ar.l1":"any browser, single sign-on",
+    "ar.l2b":"Front end","ar.l2":"React web app (responsive, nothing to install)",
+    "ar.l3b":"Services","ar.l3":"authentication, warehouse, BI, sharing, OCR, automation, activity log",
+    "ar.l4b":"Data","ar.l4":"platform SQL Server + dedicated warehouse + connectors (SQL / Oracle / PostgreSQL / Excel)",
+    "ar.l5b":"Automation & Integration","ar.l5":"workflow engine, OCR engine, ERP desktop RPA, scheduled sync",
+    "ar.side.t":"🔒 Security & Governance",
+    "ar.side.p":"Encrypted credential vault (AES-256-GCM) · role-based access · full audit trail",
+    "ar.note":"ECP reads your existing databases and never moves them — it is a central platform layered on top.",
+    "se.title":"Security & Governance",
+    "se.sub":"Trustworthy by design.",
+    "se.1.t":"Encrypted Credentials","se.1.p":"Database and API passwords are stored as AES-256-GCM ciphertext and never leave the server; lists only show “password set”.",
+    "se.2.t":"Full Activity Log","se.2.p":"Logins, refreshes, consolidations, exports and admin changes are all recorded, with step-level traces and IP/device info.",
+    "se.3.t":"Role-Based Access","se.3.p":"Per-user module access plus per-report sharing, enforced server-side; suspended accounts are blocked.",
+    "se.4.t":"Read-Only, Whitelisted","se.4.p":"Custom dataset SQL is limited to a single read-only SELECT; report identifiers are validated against real columns.",
+    "se.5.t":"Environment Registry","se.5.p":"Per-machine server/database profiles with masked passwords and connection tests — production and test kept apart.",
+    "se.6.t":"Deployable Service","se.6.p":"Runs as a managed background service; front end hot-updates, back end restarts cleanly on a fixed port.",
+    "wy.title":"Why ECP",
+    "wy.sub":"The selling points that matter to you.",
+    "wy.b1":"One login, one screen for every ERP — stop tab-switching and re-keying.",
+    "wy.b2":"Scattered ERP and Excel data becomes a governed warehouse with no-code joins.",
+    "wy.b3":"Self-service dashboards — and AI — cut report build time from days to minutes.",
+    "wy.b4":"Share safely with server-side, per-report access — no IT ticket needed.",
+    "wy.b5":"Automate document capture (OCR) and repetitive ERP entry (desktop RPA).",
+    "wy.b6":"Audit trail and encrypted credentials make it secure and compliance-friendly.",
+    "wy.o1":"Faster reporting","wy.o2":"Single source of truth","wy.o3":"Lower manual effort & errors","wy.o4":"Controlled, auditable sharing",
+    "about.title":"About Us",
+    "about.p1":"ECP is developed by EpiGoal Consulting Technology Limited, a Hong Kong-based consulting and technology company. We are not just a coding vendor — we understand your business process first, then simplify it with technology.",
+    "about.p2":"We know the real pain of manufacturing and cross-border operations: too many systems, data that never matches, reports built by hand. ECP is the product forged from exactly those daily pains.",
+    "about.s1":"ERP systems connected","about.s2":"core capabilities","about.s3":"web-based, zero install","about.s4":"scheduled automation",
+    "ct.title":"See ECP on Your Own Data",
+    "ct.sub":"Three steps to start: pick systems → we build the warehouse and dashboard → roll out sharing and automation.",
+    "ct.s1":"Pick 1–2 ERPs and the reports your team rebuilds every week.",
+    "ct.s2":"We connect them, build a warehouse dataset and one shared dashboard.",
+    "ct.s3":"Roll out governed sharing and automation to the people who need it.",
+    "ct.cta":"Email Us to Book a Demo",
+    "ct.email":"Email","ct.addr":"Address","ct.addr.v":"Hong Kong Island, Hong Kong, China",
+    "ct.hours":"Office Hours","ct.hours.v":"Mon–Fri 9:00–18:00",
+    "footer":"© 2026 EpiGoal Consulting Technology Limited · All Rights Reserved"
   }
 };
 
-// 平台導覽資料（截圖 + 賣點）
+// 平台導覽資料（PPT 內的實際介面截圖 + 賣點）
 const tourData = {
   zh: [
     {
-      tab:"統一儀表板", img:"assets/platform-modules.png", alt:"ERP Central Platform 統一儀表板",
-      t:"統一儀表板——所有系統一頁看清",
-      d:"登入即見整個集團的營運概況：Epicor 生產、Data Control Center 跨公司交易、HKERP 薪酬與主檔、報價工具，全部濃縮成即時 KPI 卡，管理層不用再逐個系統登入查數。",
-      b:["每個模組即時 KPI：待處理 PD、跨公司金額、結帳天數、30 日良率","模組健康狀態一目了然（Active／Secured／Configured）","一頁總覽 3 套 ERP + 業務工具，取代人手逐系統導出 Excel"]
+      tab:"統一模組導覽", img:"assets/tour-modules.png", alt:"統一模組導覽",
+      t:"統一模組導覽——所有系統集中於一處",
+      d:"單一登入後，每位使用者看到的是被授權的模組：一致的頁面版面、全站搜尋、我的最愛與最近使用——學一次就識用晒所有系統。",
+      b:["串接 Epicor、HKERP、Navision、CorpERP、SAP 等","角色權限決定選單，未授權模組直接隱藏","全站搜尋＋我的最愛＋最近使用，功能一秒到達"]
     },
     {
-      tab:"Epicor 生產報表", img:"assets/platform-epicor.png", alt:"Epicor 生產監控報告組",
-      t:"Epicor 生產監控報告組——7 個子報告覆蓋全流程",
-      d:"專為廠房營運而設的監控報告組，由物料建立、成本滾算到外廠數據收集，每個報告都有覆蓋率分析與週勢追蹤，紙本 QC 報告更可以用 OCR 自動辨識歸檔。",
-      b:["Item vs PD MOM：物料建立進度 vs PD/MOM 覆蓋率與週勢","Costing：W-Layer、包裝與 HK ERP 成本滾算覆蓋率","Molding：模具申請、維修產能與 Sa/Sb/Sc 分析","Mold QC Report OCR：紙本 QC 報告自動辨識歸檔"]
+      tab:"倉儲資料集", img:"assets/tour-datasets.png", alt:"資料倉儲資料集",
+      t:"倉儲資料集——抽取、暫存、清理與匯出",
+      d:"連接 SQL Server、Oracle、PostgreSQL 與 Excel 活頁簿，將來源資料抽取並暫存為受管的倉儲資料集，全程無需寫程式。",
+      b:["已加密儲存的憑證可重用，密碼絕不離開伺服器","宣告式、可重播的清理規則，於每次刷新時自動套用","檢視、剖析並匯出完整資料集為 Excel／CSV，伺服器端分頁與篩選"]
     },
     {
-      tab:"數據控制中心", img:"assets/platform-dcc.png", alt:"Data Control Center 跨 ERP 數據控制中樞",
-      t:"Data Control Center——跨 ERP 數據控制中樞",
-      d:"集中審查 Epicor 用戶權限、監控 HKERP 主檔（系統參數、外部物料、客戶）的同步狀態。主檔不一致不再靠人手發現，權限審查不用逐個系統登入。",
-      b:["User Access Overall Control：Epicor 用戶權限集中審查","主檔同步監控：System / External Item / Customer Master","一鍵匯出 Excel，供審計與對帳使用"]
+      tab:"資料集連結", img:"assets/tour-links.png", alt:"資料集連結",
+      t:"資料集連結——視覺化地整合多個來源",
+      d:"拖放或下拉式連結編輯器，將多個來源整合為單一衍生資料集（聯集／Join），橫跨不同系統亦可——業務人員自行建立合併模型，無需 SQL。",
+      b:["連結鍵值會對照真實暫存資料驗證，杜絕接錯欄位","每個整合資料集都保留血緣關係，數字永遠可追溯到來源","聯集／Join 支援跨系統合併，例如 ERP 訂單接 Excel 價目表"]
     },
     {
-      tab:"數據倉庫與 BI", img:"assets/platform-warehouse.png", alt:"Data Warehouse 數據倉庫與 BI 報表",
-      t:"數據倉庫與 BI 報表——由連線到圖表一條龍",
-      d:"連接 SQL Server、Oracle、PostgreSQL 及 Excel 工作簿，抽取成倉庫數據集，再用圖表面板砌出 BI 報告——KPI、柱狀、折線、圓餅全部自選，全螢幕演示或嵌入儀表板都得。",
-      b:["多種數據源統一接入，匯入狀態有 Action Log 追蹤","自建 BI 報表：表格、KPI、柱狀、折線、圓餅圖","AI Modeling 與 CSV 匯出","全螢幕／儀表板兩種展示模式"]
+      tab:"BI 報表編輯器", img:"assets/tour-bi.png", alt:"BI 報表編輯器",
+      t:"自助 BI 儀表板——並有 AI 協助",
+      d:"全頁報表編輯器：一份報表在可調整的網格上容納多個面板，每個面板有獨立的維度、量度、篩選與 Top-N。",
+      b:["豐富圖表庫：KPI、直條、橫條、折線、圓餅、圓環、表格，另支援 CALC 指標與時間區間篩選","一次建置兩種風格：董事會適用的明亮 Canvas，監控室適用的深色 Terminal","AI 建議依你的資料提議圖表版面，以真實欄位驗證後一鍵套用"]
     },
     {
-      tab:"報價單產生器", img:"assets/platform-quotesheet.png", alt:"Customer QuoteSheet Generator 客戶報價單產生器",
-      t:"客戶報價單產生器——Excel 模板自動生成",
-      d:"上傳 Excel 模板與主檔數據，平台按映射規則直接在瀏覽器生成報價單 Excel，完整保留 VBA 巨集與格式——同事不用再逐份複製貼上改數。",
-      b:["Template Upload + Mapping Setup + Action Log 全流程管理","客戶端直接生成，保留 VBA 巨集與原有格式","主檔維護與生成記錄一目了然"]
+      tab:"受控分享", img:"assets/tour-share.png", alt:"已發佈儀表板與逐報表權限",
+      t:"受控分享——把正確的報表分享給正確的人",
+      d:"將任何 BI 報表發佈為獨立選單項目——屬即時引用，編輯會自動同步；逐報表權限由伺服器端強制執行。",
+      b:["逐報表權限：指定使用者或設為公開，於伺服器端強制","檢視者無需資料倉儲權限——供主管與跨部門使用也安全","擁有者可控制顯示主題與資料夾，報表目錄保持整潔"]
     },
     {
-      tab:"Data Terminal", img:"assets/platform-terminal.png", alt:"個人化 Data Terminal 工作台",
-      t:"個人化 Data Terminal——每人一個專屬工作台",
-      d:"每位同事自選每天要看的數據頻道——報表區、EDI、同步記錄——登入即見個人專屬終端機。配合我的最愛、最近使用與全站搜尋，常用的功能一秒到達。",
-      b:["自選數據頻道，只顯示權限允許的內容","同步歷史與數據摘要即時串流","我的最愛、最近使用、全站搜尋"]
+      tab:"實戰儀表板", img:"assets/tour-live-itemmom.png", alt:"Epicor Item vs PD MOM 實戰儀表板",
+      t:"實際範例——以 ECP 建置並發佈的真實儀表板",
+      d:"Epicor 品項 vs PD MOM：由倉儲資料集驅動的覆蓋率 KPI 與多維度分解——按月、按週、按開發部門、按客戶，一目了然。",
+      b:["整體覆蓋率 KPI（如 9,316 品項 / 5,189 PDMOM / 55.7%）","按月／按週趨勢＋按部門／客戶分解","Canvas／Terminal 雙主題，全螢幕即可開會演示"]
     },
     {
-      tab:"登入與權限", img:"assets/platform-login.png", alt:"統一登入入口",
-      t:"統一登入與權限治理——一個帳號進入所有系統",
-      d:"一個帳號進入全部系統。角色權限決定每個人看得到什麼模組，測試與生產環境在介面上清晰標示，敏感操作留有活動日誌可審計。",
-      b:["單一登入（SSO）存取全部系統與工具","角色為本權限，未授權模組直接隱藏","測試／生產環境標示 + 活動日誌審計"]
+      tab:"報表目錄", img:"assets/tour-catalogue.png", alt:"BI 報表目錄",
+      t:"BI 報表目錄——由營運 KPI 到月度／週度對比",
+      d:"建立在倉儲資料集上的報表目錄：可以是單一圖表，也可以是多面板儀表板——一套平台，服務管理層、監控室與跨部門多種對象。",
+      b:["每份報表標明資料來源與類型（dashboard／chart）","新報表由編輯器建立，存檔即入目錄","可再一鍵發佈為受控分享的選單項目"]
     }
   ],
   en: [
     {
-      tab:"Unified Dashboard", img:"assets/platform-modules.png", alt:"ERP Central Platform unified dashboard",
-      t:"Unified Dashboard — every system on one page",
-      d:"See the whole operation the moment you sign in: Epicor production, Data Control Center intercompany activity, HKERP payroll and masters, and quoting tools — condensed into live KPI cards. No more logging into each system to check numbers.",
-      b:["Live KPI cards per module: open PDs, intercompany value, days to close, 30-day yield","Module health at a glance (Active / Secured / Configured)","One page covering 3 ERP systems plus business tools — replacing manual Excel exports"]
+      tab:"Module Navigation", img:"assets/tour-modules.png", alt:"Unified module navigation",
+      t:"Unified Module Navigation — every system in one place",
+      d:"After one sign-in, each user sees exactly the modules they are entitled to: consistent page layouts, global search, favourites and recents — learn once, use everywhere.",
+      b:["Connects Epicor, HKERP, Navision, CorpERP, SAP and more","Role-based menus — unauthorised modules are simply hidden","Global search, favourites and recents put every function one click away"]
     },
     {
-      tab:"Epicor Reports", img:"assets/platform-epicor.png", alt:"Epicor production monitoring reports",
-      t:"Epicor Production Monitoring — 7 sub-reports covering the full flow",
-      d:"A monitoring suite built for factory operations: from item creation and cost roll-up to external factory data collection. Every report includes coverage analysis and weekly trends, and paper QC reports can be digitised with OCR.",
-      b:["Item vs PD MOM: item creation progress vs PD/MOM coverage with weekly trend","Costing: W-Layer, packing and HK ERP cost roll-up coverage","Molding: mold requests, repair throughput and Sa/Sb/Sc analysis","Mold QC Report OCR: automatic recognition and filing of paper QC reports"]
+      tab:"Warehouse Datasets", img:"assets/tour-datasets.png", alt:"Warehouse datasets",
+      t:"Warehouse Datasets — extract, stage, cleanse and export",
+      d:"Connect SQL Server, Oracle, PostgreSQL and Excel workbooks; extract and stage source data into governed warehouse datasets — all without writing code.",
+      b:["Saved, encrypted credentials are reusable; passwords never leave the server","Declarative, replayable cleansing rules applied automatically on every refresh","Explore, profile and export full datasets to Excel/CSV with fast server-side paging and filters"]
     },
     {
-      tab:"Data Control Center", img:"assets/platform-dcc.png", alt:"Data Control Center cross-ERP hub",
-      t:"Data Control Center — the cross-ERP control hub",
-      d:"Review Epicor user access and monitor HKERP master data synchronisation (system parameters, external items, customers) from one place. Inconsistent master data no longer relies on someone noticing by hand.",
-      b:["User Access Overall Control: centralised Epicor access review","Master data sync monitoring: System / External Item / Customer Master","One-click Excel export for audit and reconciliation"]
+      tab:"Dataset Links", img:"assets/tour-links.png", alt:"Dataset links",
+      t:"Dataset Links — consolidate sources visually",
+      d:"A drag-and-drop link editor consolidates several sources into one derived dataset (union / join) — even across different systems. Business users build the combined model themselves; no SQL required.",
+      b:["Join keys are checked against the real staged data, so wrong columns are impossible","Every consolidated dataset keeps its lineage — numbers are always traceable to their sources","Union / join across systems, e.g. ERP orders with an Excel price list"]
     },
     {
-      tab:"Warehouse & BI", img:"assets/platform-warehouse.png", alt:"Data Warehouse and BI reports",
-      t:"Data Warehouse & BI — from connection to chart, end to end",
-      d:"Connect SQL Server, Oracle, PostgreSQL and Excel workbooks, extract them into warehouse datasets, then compose BI reports from chart panels — table, KPI, column, bar, line and pie, all configurable, with full-screen presentation or dashboard embedding.",
-      b:["Unified connectors for multiple data sources with Action Log tracking","Self-service BI reports: table, KPI, column, bar, line, pie","AI modeling and CSV export","Full-screen and dashboard display modes"]
+      tab:"BI Report Editor", img:"assets/tour-bi.png", alt:"BI report editor",
+      t:"Self-Service BI Dashboards — with a little AI help",
+      d:"A full-page report editor: one report holds many panels on a resizable grid, each with its own dimensions, measures, filters and Top-N.",
+      b:["Rich chart library — KPI, column, bar, line, pie, donut, tables — plus CALC metrics and time-window filters","Two looks from one build: light Canvas for the boardroom, dark Terminal for the NOC","AI Suggest proposes the chart layout from your data — validated against real columns, then one click applies"]
     },
     {
-      tab:"Quote Generator", img:"assets/platform-quotesheet.png", alt:"Customer QuoteSheet Generator",
-      t:"Customer QuoteSheet Generator — automated from Excel templates",
-      d:"Upload an Excel template and master data; the platform generates quote-sheet Excel files in the browser according to mapping rules — preserving VBA macros and formatting. No more copy-paste-editing one quote at a time.",
-      b:["Full workflow: Template Upload + Mapping Setup + Action Log","Client-side generation that preserves VBA macros and original formatting","Master data maintenance and generation history in one place"]
+      tab:"Governed Sharing", img:"assets/tour-share.png", alt:"Deployed dashboard with per-report access",
+      t:"Governed Sharing — the right report to the right people",
+      d:"Deploy any BI report as a proper menu item — a live reference, so edits propagate automatically. Per-report access is enforced on the server.",
+      b:["Per-report access: grant specific users or make it public — enforced server-side","Viewers need no data-warehouse rights — safe for management and cross-department use","Owner-controlled display theme and folders keep the report catalogue tidy"]
     },
     {
-      tab:"Data Terminal", img:"assets/platform-terminal.png", alt:"Personalised Data Terminal workspace",
-      t:"Personalised Data Terminal — a workspace for every user",
-      d:"Each team member picks the data feeds they work with every day — report sections, EDI, sync history — and their own terminal streams them on every sign-in. With favourites, recents and global search, everything is one click away.",
-      b:["Choose your own data channels — only what your access rights allow","Live streaming of sync history and data summaries","Favourites, recent items and global search"]
+      tab:"Live Dashboards", img:"assets/tour-live-itemmom.png", alt:"Epicor Item vs PD MOM live dashboard",
+      t:"In Production — real dashboards built and deployed on ECP",
+      d:"Epicor Item vs PD MOM: coverage KPIs and multi-dimensional breakdowns driven by warehouse datasets — by month, by week, by development department, by customer.",
+      b:["Overall coverage KPIs (e.g. 9,316 items / 5,189 PDMOM / 55.7%)","Monthly and weekly trends plus department / customer breakdowns","Canvas / Terminal themes, full-screen for meetings"]
     },
     {
-      tab:"Login & Access", img:"assets/platform-login.png", alt:"Unified login portal",
-      t:"Unified Login & Governance — one account for every system",
-      d:"One account for the entire platform. Role-based permissions decide which modules each person sees, test and production environments are clearly labelled, and sensitive actions are recorded in an audit log.",
-      b:["Single sign-on (SSO) across all systems and tools","Role-based access — unauthorised modules are simply hidden","Test / production environment labels plus audit logging"]
+      tab:"Report Catalogue", img:"assets/tour-catalogue.png", alt:"BI reports catalogue",
+      t:"BI Reports Catalogue — from KPIs to monthly / weekly comparisons",
+      d:"A catalogue of reports built on warehouse datasets: a single chart or a multi-panel dashboard — one platform serving management, the NOC and cross-department audiences.",
+      b:["Each report shows its dataset and type (dashboard / chart)","New reports are built in the editor and appear in the catalogue on save","One click to publish as a governed, permission-controlled menu item"]
     }
   ]
 };
+
+let lang = localStorage.getItem("lang") || "zh";
+const brand = document.getElementById("brand");
+const toggle = document.getElementById("langToggle");
 
 let tourIdx = 0;
 function renderTour(){
@@ -476,10 +718,6 @@ function renderTour(){
     </div>`;
 }
 function showTour(i){ tourIdx = i; renderTour(); }
-
-let lang = localStorage.getItem("lang") || "zh";
-const brand = document.getElementById("brand");
-const toggle = document.getElementById("langToggle");
 
 function applyLang(){
   document.querySelectorAll("[data-i18n]").forEach(el=>{
